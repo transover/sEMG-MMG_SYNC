@@ -3,8 +3,8 @@ Synchronous acquisition and analysis for sEMG-MMG. NI9205 and TCP/IP were used t
 You can download the UI_Collector.exe tool in Release for the task of sEMG-MMG acquisition, as shown in the following figure:
 
 <p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" style="margin-right:10px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%"  />
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" style="margin-right:20px;"/>
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%" style="margin-right:10px;" />
 </p>
 
 ### 1. Using the NI9205 Acquisition Board and Installing the NI Driver:
@@ -45,7 +45,7 @@ You can download the UI_Collector.exe tool in Release for the task of sEMG-MMG a
 ### 4. Launch UI_Collector and Follow Help Instructions to Complete Data Acquisition
 1.  Launch the software. If the NI9205 is connected properly, the **[Connection Status]** indicator will light up; otherwise, an error message will pop up.
 2.  Check **[Enable EMG]** to light up the **[EMG]** indicator.
-3.  Enter the stimulus information and click **[Stimulus Presentation]**. An experiment paradigm prompt will appear; click **[OK]** to light up the **[Stimulus]** indicator.
+3.  Enter the stimulus information and click **[STI On]**. An experiment paradigm prompt will appear; click **[OK]** to light up the **[Stimulus]** indicator.
 4.  Click **[Record]** to light up the **[Acquisition Status]** indicator, indicating that data streams are being written to file in real time (to accurately record timestamps, you must click **[Record]** to enter recording mode before clicking **[Start]**).
 5.  Click **[Start]** to light up the **[Display Status]** indicator, indicating that the NI task is active and data collection and display have started (if **[Record]** is not clicked, data will be previewed but not saved).
 6.  Click **[Stop]** to turn off both **[Display Status]** and **[Acquisition Status]** indicators, indicating that the acquisition or preview task is paused (in stimulus presentation mode, **[Start]** cannot be clicked again).
@@ -54,9 +54,9 @@ You can download the UI_Collector.exe tool in Release for the task of sEMG-MMG a
 9.  Click the toolbar **[Export (PDF)]** to export experimental information as a PDF file.
 10. Click the toolbar **[View Timing]** to view timing information and compare the start and end times and delays of different modalities.
 11. Click the toolbar **[Plot Image]** to plot high-resolution images and preview collected data.
-12. Check **[Enable Filtering]** to filter real-time images without affecting the written data.
-13. Check **[Enable Conversion]** to switch data units for real-time images and automatically convert values (configurable in **[Page 2]** under channel modality settings).
-14. Click **[Channel Selection]** to switch the displayed channels.
+12. Check **[Enable Filter]** to filter real-time images without affecting the written data.
+13. Check **[Enable Unit]** to switch data units for real-time images and automatically convert values (configurable in **[Tab Config]** under channel modality settings).
+14. Click **[Choose CH]** to switch the displayed channels.
 15. The control bar widgets allow play, pause, global view, zoom, and removal control of real-time images.
 16. Hover the mouse over any button to view its function information.
 
