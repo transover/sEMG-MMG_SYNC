@@ -3,8 +3,8 @@
 - You can download the UI_Collector.exe tool in Release for the task of sEMG-MMG acquisition, as shown in the following figure:
 
 <p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" height="300px" style="margin:10px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%" height="300px" style="margin:10px;" />
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" style="margin-right:10px;"/>
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%"  />
 </p>
 
 # Instructions for Use
