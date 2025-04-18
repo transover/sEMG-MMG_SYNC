@@ -1,3 +1,8 @@
+<div style="display: flex; flex-wrap: nowrap;">
+  <img src="https://github.com/user-attachments/assets/b04f1bf5-3ece-43a2-8388-e098fa0c9168" alt="logo" style="height: 50px; object-fit: contain;">
+</div>
+
+# Schematic Diagram
 <div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="SchematicDiagram_SignalAcquisition" style="height: 350px; max-width: 45%; object-fit: contain;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="NITaskArchitecture" style="height: 350px; max-width: 45%; object-fit: contain;">
