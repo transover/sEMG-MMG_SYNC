@@ -42,38 +42,39 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 3. Parameters in Biosemi ActiveTwo are located on the TCP Server tab and must be adjusted before running Biosemi ActiveTwo. Once Biosemi ActiveTwo starts data acquisition, even in display mode, parameters cannot be changed.
 4. Be careful to select the number of channels; otherwise, even if the connection is successful, data cannot be read.
 5. Streaming through TCP/IP introduces several hundred milliseconds of delay and tens of milliseconds of jitter. Data streamed via TCP/IP cannot be used directly for precise timing and requires buffering.
-![Data Transfer Protocol-24bit](https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d)
+
+<img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" style="height: auto; width: 50%; object-fit: scale-down;">
 
 #### Parameters (TCP/IP parameters used for connecting with Biosemi):
-        •IP address (host):
-            If running on the same machine as Biosemi ActiveTwo, set it to 127.0.0.1. Otherwise, use the IP address of the machine running Biosemi ActiveTwo.
-        •Port (port):
-            The port used for communication. It must match the port reported by the TCP server in Biosemi ActiveTwo. The default value is 8888.
-        •Samples per packet (tcpsamples):
-            This defines the number of sample points included in each packet sent by Biosemi ActiveTwo. It depends on the sampling rate chosen by the user.
-        •Bytes per sample (bytes):
-            This defines the number of bytes used to represent each sample. It is fixed regardless of the sampling rate and cannot be changed by the user.
-        •Channels + triggers (channels):
-            This shows the number of selected channels (plus triggers). It is controlled by the channels setting, which will be described later in the parameters section dedicated to EEG data (section: Biosemi parameters).
-            This value must match the one reported by Biosemi ActiveTwo.
+    •IP address (host):
+        If running on the same machine as Biosemi ActiveTwo, set it to 127.0.0.1. Otherwise, use the IP address of the machine running Biosemi ActiveTwo.
+    •Port (port):
+        The port used for communication. It must match the port reported by the TCP server in Biosemi ActiveTwo. The default value is 8888.
+    •Samples per packet (tcpsamples):
+        This defines the number of sample points included in each packet sent by Biosemi ActiveTwo. It depends on the sampling rate chosen by the user.
+    •Bytes per sample (bytes):
+        This defines the number of bytes used to represent each sample. It is fixed regardless of the sampling rate and cannot be changed by the user.
+    •Channels + triggers (channels):
+        This shows the number of selected channels (plus triggers). It is controlled by the channels setting, which will be described later in the parameters section dedicated to EEG data (section: Biosemi parameters).
+        This value must match the one reported by Biosemi ActiveTwo.
 
 ### 4. Launch UI_Collector and Follow Help Instructions to Complete Data Acquisition
-1.  Launch the software. If the NI9205 is connected properly, the **[Connection Status]** indicator will light up; otherwise, an error message will pop up.
-2.  Check **[Enable EMG]** to light up the **[EMG]** indicator.
-3.  Enter the stimulus information and click **[STI On]**. An experiment paradigm prompt will appear; click **[OK]** to light up the **[Stimulus]** indicator.
-4.  Click **[Record]** to light up the **[Acquisition Status]** indicator, indicating that data streams are being written to file in real time (to accurately record timestamps, you must click **[Record]** to enter recording mode before clicking **[Start]**).
-5.  Click **[Start]** to light up the **[Display Status]** indicator, indicating that the NI task is active and data collection and display have started (if **[Record]** is not clicked, data will be previewed but not saved).
-6.  Click **[Stop]** to turn off both **[Display Status]** and **[Acquisition Status]** indicators, indicating that the acquisition or preview task is paused (in stimulus presentation mode, **[Start]** cannot be clicked again).
-7.  Click **[Close]** to turn off all indicators, indicating that the task has ended. To start a new acquisition, the software must be restarted.
-8.  Click **[Save]** (not needed in recording mode) to save partial data from the graph into a custom file (Note: it is not recommended for saving all data, as real-time data can be saved automatically. Long-term recording with this method requires a large amount of memory).
-9.  Click the toolbar **[Export (PDF)]** to export experimental information as a PDF file.
-10. Click the toolbar **[View Timing]** to view timing information and compare the start and end times and delays of different modalities.
-11. Click the toolbar **[Plot Image]** to plot high-resolution images and preview collected data.
-12. Check **[Enable Filter]** to filter real-time images without affecting the written data.
-13. Check **[Enable Unit]** to switch data units for real-time images and automatically convert values (configurable in **[Tab Config]** under channel modality settings).
-14. Click **[Choose CH]** to switch the displayed channels.
-15. The control bar widgets allow play, pause, global view, zoom, and removal control of real-time images.
-16. Hover the mouse over any button to view its function information.
+> 1.  Launch the software. If the NI9205 is connected properly, the **[Connection Status]** indicator will light up; otherwise, an error message will pop up.
+> 2.  Check **[Enable EMG]** to light up the **[EMG]** indicator.
+> 3.  Enter the stimulus information and click **[STI On]**. An experiment paradigm prompt will appear; click **[OK]** to light up the **[Stimulus]** indicator.
+> 4.  Click **[Record]** to light up the **[Acquisition Status]** indicator, indicating that data streams are being written to file in real time (to accurately record timestamps, you must click **[Record]** to enter recording mode before clicking **[Start]**).
+> 5.  Click **[Start]** to light up the **[Display Status]** indicator, indicating that the NI task is active and data collection and display have started (if **[Record]** is not clicked, data will be previewed but not saved).
+> 6.  Click **[Stop]** to turn off both **[Display Status]** and **[Acquisition Status]** indicators, indicating that the acquisition or preview task is paused (in stimulus presentation mode, **[Start]** cannot be clicked again).
+> 7.  Click **[Close]** to turn off all indicators, indicating that the task has ended. To start a new acquisition, the software must be restarted.
+> 8.  Click **[Save]** (not needed in recording mode) to save partial data from the graph into a custom file (Note: it is not recommended for saving all data, as real-time data can be saved automatically. Long-term recording with this method requires a large amount of memory).
+> 9.  Click the toolbar **[Export (PDF)]** to export experimental information as a PDF file.
+> 10. Click the toolbar **[View Timing]** to view timing information and compare the start and end times and delays of different modalities.
+> 11. Click the toolbar **[Plot Image]** to plot high-resolution images and preview collected data.
+> 12. Check **[Enable Filter]** to filter real-time images without affecting the written data.
+> 13. Check **[Enable Unit]** to switch data units for real-time images and automatically convert values (configurable in **[Tab Config]** under channel modality settings).
+> 14. Click **[Choose CH]** to switch the displayed channels.
+> 15. The control bar widgets allow play, pause, global view, zoom, and removal control of real-time images.
+> 16. Hover the mouse over any button to view its function information.
 
 ### 5. If Parallel Port Triggering is Needed, Follow Help Instructions to Configure Additional Driver Files
 ![Example of signal acquisition process](https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10)
