@@ -46,17 +46,45 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 <img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" align="center" style="height: auto; width: 50%; object-fit: scale-down;">
 
 #### Parameters (TCP/IP parameters used for connecting with Biosemi):
-    •IP address (host):
-        If running on the same machine as Biosemi ActiveTwo, set it to 127.0.0.1. Otherwise, use the IP address of the machine running Biosemi ActiveTwo.
-    •Port (port):
-        The port used for communication. It must match the port reported by the TCP server in Biosemi ActiveTwo. The default value is 8888.
-    •Samples per packet (tcpsamples):
-        This defines the number of sample points included in each packet sent by Biosemi ActiveTwo. It depends on the sampling rate chosen by the user.
-    •Bytes per sample (bytes):
-        This defines the number of bytes used to represent each sample. It is fixed regardless of the sampling rate and cannot be changed by the user.
-    •Channels + triggers (channels):
-        This shows the number of selected channels (plus triggers). It is controlled by the channels setting, which will be described later in the parameters section dedicated to EEG data (section: Biosemi parameters).
-        This value must match the one reported by Biosemi ActiveTwo.
+- IP address (host):
+    If running on the same machine as Biosemi ActiveTwo, set it to **127.0.0.1**. Otherwise, use the IP address of the machine running Biosemi ActiveTwo.
+- Port (port):
+    The port used for communication. It must match the port reported by the TCP server in Biosemi ActiveTwo. The default value is **8888**.
+- Samples per packet (tcpsamples):
+    This defines the number of sample points included in each packet sent by Biosemi ActiveTwo. It depends on the sampling rate chosen by the user.
+- Bytes per sample (bytes):
+    This defines the number of bytes used to represent each sample. It is fixed regardless of the sampling rate and cannot be changed by the user.
+- Channels + triggers (channels):
+    This shows the number of selected channels (plus triggers). It is controlled by the channels setting, which will be described later in the parameters section dedicated to EMG data (section: Biosemi parameters).
+    This value must match the one reported by Biosemi ActiveTwo.
+        
+    class Param:
+        """
+        Data Acquisition Parameter Control Class
+        """
+        device = None                    # ActiveTwo device instance
+        host = '127.0.0.1'               # Host IP address
+        port = 8888                      # Port number
+        SampleFrequency = 2048           # Sampling rate (Hz), recommended value: 2048
+        ChannelNum = 32                  # Number of channels
+        tcpsamples = 4                   # Samples per packet
+        gain = 0.03125                   # Signal gain
+        bytes_data = b''                 # Temporary storage for raw byte data of all channel samples in a packet
+    
+        Status = 'off'                                     # Acquisition status ('on' = running, 'off' = stopped)
+        SampleNum = 1                                      # Number of collected samples, including initial point
+        BufferSize = 128                                   # Buffer size (number of samples)
+        time_start, time_end = None, None                  # Task start and end timestamps (datetime objects)
+        Duration = None                                    # Total recording duration (in seconds)
+        IsRecording = False                                # Whether to write data to file in real time
+        WindowLength = 20                                  # Length of the data window (seconds) for displaying recent samples; 
+                                                           # if too large (>1500) it may cause stream buffer overflow errors
+        FileName = './GUI_Output/Data/BioSemiData.txt'     # Path for saving recorded data
+
+        Unit = 'uV'  # Data unit
+        buffer = np.zeros((ChannelNum, BufferSize))     # Buffer array of size (channels × buffer_size), e.g., 32×128
+        time = np.linspace(0, SampleNum / SampleFrequency, num=SampleNum, endpoint=False)  # Time vector (includes 0 at the start), size: samples
+        data = np.zeros((ChannelNum, SampleNum))        # Data array (includes initial zeros), size: channels × samples
 
 ### 4. Launch UI_Collector and Follow Help Instructions to Complete Data Acquisition
 > 1.  Launch the software. If the NI9205 is connected properly, the **[Connection Status]** indicator will light up; otherwise, an error message will pop up.
