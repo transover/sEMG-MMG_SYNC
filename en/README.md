@@ -1,13 +1,17 @@
+<div style="display: flex; align-items: center; gap: 1em;">
+  <img src="https://github.com/user-attachments/assets/b04f1bf5-3ece-43a2-8388-e098fa0c9168" alt="logo" style="height: 50px; object-fit: contain;">
+  <div>
+    <a>English</a>
+    ｜
+    <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/README.md">简体中文</a>
+  </div>
+</div>
+
+# 示意图
 <div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="SchematicDiagram_SignalAcquisition" style="height: 350px; max-width: 45%; object-fit: contain;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="NITaskArchitecture" style="height: 350px; max-width: 45%; object-fit: contain;">
 </div>
-
-<p align="center">
-  <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/README.md">English</a>
-  ｜
-  简体中文
-</p>
 
 # 使用说明
 表面肌电信号和肌磁信号的同步采集与分析：sEMG-MMG任务，**NI9205** 和 **TCP/IP** 被用于采集由 **Quspin** 和 **BioSemi** 生成的数据。
