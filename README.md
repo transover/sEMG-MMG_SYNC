@@ -144,11 +144,24 @@ class NI_Param:
 > 15. The control bar widgets allow play, pause, global view, zoom, and removal control of real-time images.
 > 16. Hover the mouse over any button to view its function information.
 
-### 5. If Parallel Port Triggering is Needed, Follow Help Instructions to Configure Additional Driver Files
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
 
+### 5. If Parallel Port Triggering is Needed, Follow Help Instructions to Configure Additional Driver Files
+- Please ensure that the parallel driver is correctly configured to prevent the `_inpout` dependency of psychopy from reporting errors(**Important**). Otherwise, delete the `inpout32.dll`, `inpoutx64.dll` or `dlportio` related files in the  directory: `C:\Windows\System32`.
+- The residual magnetism of the magnetic shielding environment under the non-magnetic sEMG device was shown in the following figure. The collected analog data is 100% consistent with the digital signal, demonstrating the lossless and distortionless
+characteristics of **UI_Collector.exe**. Furthermore, from the measured sEMG-MMG signal images, the timing alignment of each trial of the 2 modalities can be seen.
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/7b31d3a2-f370-463f-8825-6b2dd570e096" alt="Remanence Orientation" style="height: 100px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/f3e9f52f-61f7-4bbc-85ec-c6a96c953537" alt="Remanence Intensity" style="height: 100px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/a023df27-e101-453b-a491-5cf90b1c9850" alt="Analog/Digital Signals" style="height: 100px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/e4912d3b-4b32-4baa-9bec-e93c7993537b" alt="sEMG-MMG Signals" style="height: 100px; width: auto; object-fit: scale-down;">
+</p>
+  
+# Results
+- The `./GUI_Package` directory contains resources such as `NI9205_offset` and `subject`, which can be configured for the **NI physical channel bias voltage**, **preloaded subject information**, etc
 - Click **[Record]** to turn on the **acquisition state** indicator light and click **[stop]** to stop recording. When the **connection state**, **display state**, **acquisition state** and **stimulus** indicator lights are all on,  and the data will be automatically saved as **6** independent files. As shown in the following figure, multiple experimental tasks were recorded and named by date under the directory `./GUI_Output/Data/`, and each task contains **7** independent files:
 
 <p align="center">
@@ -163,9 +176,9 @@ class NI_Param:
 - [ ] The post-processing results of the above original data are under the **Process** directory (which need to be analyzed and obtained in **UI_Reader.exe**).
 
 <p align="center">
+    <img src="https://github.com/user-attachments/assets/cab2d4bd-1d53-46e7-a702-874f2574cba5" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
     <img src="https://github.com/user-attachments/assets/cfa18b83-7ef6-41a3-821a-497e931d16e2" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
     <img src="https://github.com/user-attachments/assets/6bde7b22-51c8-4c67-80e4-01f52fdbc4ec" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/cab2d4bd-1d53-46e7-a702-874f2574cba5" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
 </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
