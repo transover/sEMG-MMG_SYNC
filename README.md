@@ -1,10 +1,7 @@
-<div style="display: flex; justify-content: space-between;">
-  <div style="flex: 1; margin-right: 10px;">
-    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="Image 1" style="width: 100%; height: auto;">
-  </div>
-  <div style="flex: 1; margin-left: 10px;">
-    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="Image 2" style="width: 100%; height: auto;">
-  </div>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="SchematicDiagram_SignalAcquisition" style="height: 300px; max-width: 45%; object-fit: contain;">
+  <div style="width:5%"></div>
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="NITaskArchitecture" style="height: 300px; max-width: 45%; object-fit: contain;">
 </div>
 
 <p align="center">
