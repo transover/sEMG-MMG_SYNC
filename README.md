@@ -162,6 +162,11 @@ class NI_Param:
 - [x] **Info.txt** records the experimental description information, such as paradigm information and subject information；
 - [ ] The post-processing results of the above original data are under the **Process** directory (which need to be analyzed and obtained in **UI_Reader.exe**).
 
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/cfa18b83-7ef6-41a3-821a-497e931d16e2" alt="Files" style="height: 100px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/6bde7b22-51c8-4c67-80e4-01f52fdbc4ec" alt="Files" style="height: 100px; width: auto; object-fit: scale-down;">
+</p>
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # License
 - The texts, code, images, photos, and videos in this repository are licensed under [BSL-1.0 license](https://github.com/transover/sEMG-MMG_SYNC/blob/main/LICENSE)
