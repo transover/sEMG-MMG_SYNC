@@ -153,8 +153,8 @@ class NI_Param:
 - The residual magnetism of the magnetic shielding environment under the non-magnetic sEMG device was shown in the following figure. All the residual magnetism in the radial direction is within the magnetic compensation range (<50 nT) and has a small variation range, which indicates the feasibility of the sEMG-MMG hardware configuration.
 
 <p align="center">
-    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Remanence Orientation.jpg" alt="Remanence Orientation" style="height: 200px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Remanence Intensity.jpg" alt="Remanence Intensity" style="height: 200px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/RemanenceOrientation.jpg" alt="Remanence Orientation" style="height: 200px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/RemanenceIntensity.jpg" alt="Remanence Intensity" style="height: 200px; width: auto; object-fit: scale-down;">
 </p>
 
 - The collected analog data is 100% consistent with the digital signal, demonstrating the lossless and distortionless characteristics of the software **UI_Collector.exe**. This reflects the accuracy and stability of the acquisition system.
