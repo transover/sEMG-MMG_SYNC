@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  English
+  <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/README.md">English</a>
   ｜
   <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/README.md">简体中文</a>
 </p>
@@ -110,5 +110,5 @@ class Param:
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### License
-- The texts, code, images, photos, and videos in this repository are licensed under ![BSL-1.0 license](https://github.com/transover/sEMG-MMG_SYNC/blob/main/LICENSE)
+- The texts, code, images, photos, and videos in this repository are licensed under [BSL-1.0 license](https://github.com/transover/sEMG-MMG_SYNC/blob/main/LICENSE)
 - If this content is helpful to you, please click Star :star:  on the top right corner of the page to show your support. Thank you! 
