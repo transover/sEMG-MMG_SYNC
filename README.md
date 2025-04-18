@@ -1,6 +1,5 @@
 <div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="SchematicDiagram_SignalAcquisition" style="height: 300px; max-width: 45%; object-fit: contain;">
-  <div style="width:5%"></div>
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="NITaskArchitecture" style="height: 300px; max-width: 45%; object-fit: contain;">
 </div>
 
