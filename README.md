@@ -1,5 +1,5 @@
 <div style="display: flex; align-items: center; gap: 1em;">
-  <img src="https://github.com/user-attachments/assets/b04f1bf5-3ece-43a2-8388-e098fa0c9168" alt="logo" style="height: 50px; object-fit: contain;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/logo.png" alt="logo" style="height: 50px; object-fit: contain;">
   <div>
     <a><b>English</b></a>
     ｜
@@ -53,7 +53,7 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 5. Streaming through TCP/IP introduces several hundred milliseconds of delay and tens of milliseconds of jitter. Data streamed via TCP/IP cannot be used directly for precise timing and requires buffering.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" style="height: auto; width: 50%; object-fit: scale-down;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/LSB_MSB.png" alt="Data Transfer Protocol-24bit" style="height: auto; width: 50%; object-fit: scale-down;">
 </p>
 
 #### Parameters (TCP/IP parameters used for connecting with Biosemi):
@@ -146,23 +146,23 @@ class NI_Param:
 > 16. Hover the mouse over any button to view its function information.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/mainwindow_en.png" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
 
 # Verification
 - The residual magnetism of the magnetic shielding environment under the non-magnetic sEMG device was shown in the following figure. All the residual magnetism in the radial direction is within the magnetic compensation range (<50 nT) and has a small variation range, which indicates the feasibility of the sEMG-MMG hardware configuration.
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/7b31d3a2-f370-463f-8825-6b2dd570e096" alt="Remanence Orientation" style="height: 200px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/f3e9f52f-61f7-4bbc-85ec-c6a96c953537" alt="Remanence Intensity" style="height: 200px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Remanence Orientation.jpg" alt="Remanence Orientation" style="height: 200px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Remanence Intensity.jpg" alt="Remanence Intensity" style="height: 200px; width: auto; object-fit: scale-down;">
 </p>
 
 - The collected analog data is 100% consistent with the digital signal, demonstrating the lossless and distortionless characteristics of the software **UI_Collector.exe**. This reflects the accuracy and stability of the acquisition system.
 - Furthermore, from the measured sEMG-MMG signal images, the timing alignment of each trial of the 2 modalities can be seen. These results indicate that we can record sEMG and MMG simultaneously very well and maintain a high modal synchrony between the signals.
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/a023df27-e101-453b-a491-5cf90b1c9850" alt="Analog/Digital Signals" style="height: 150px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/e4912d3b-4b32-4baa-9bec-e93c7993537b" alt="sEMG-MMG Signals" style="height: 160px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/AD-Comparison.jpg" alt="Analog/Digital Signals" style="height: 150px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/sEMG-MMG.jpg" alt="sEMG-MMG Signals" style="height: 160px; width: auto; object-fit: scale-down;">
 </p>
   
 # Results
@@ -170,7 +170,7 @@ class NI_Param:
 - Click **[Record]** to turn on the **acquisition state** indicator light and click **[stop]** to stop recording. When the **connection state**, **display state**, **acquisition state** and **stimulus** indicator lights are all on,  and the data will be automatically saved as **6** independent files. As shown in the following figure, multiple experimental tasks were recorded and named by date under the directory `./GUI_Output/Data/`, and each task contains **7** independent files:
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/1cbebcad-cf59-4346-b42b-b863c7d1dcca" alt="Files" style="height: auto; width: 80%; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Files.png" alt="Files" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
   
 - [x] The **PDF** file records the brief information of the experiment (which needs to be exported manually), which offers the overall preview;
@@ -181,9 +181,9 @@ class NI_Param:
 - [ ] The post-processing results of the above original data are under the **Process** directory (which need to be analyzed and obtained in **UI_Reader.exe**).
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/cab2d4bd-1d53-46e7-a702-874f2574cba5" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/cfa18b83-7ef6-41a3-821a-497e931d16e2" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/6bde7b22-51c8-4c67-80e4-01f52fdbc4ec" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/GUI_Package.png" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Tasks.png" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Process.png" alt="Files" style="height: 150px; width: auto; object-fit: scale-down;">
 </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
