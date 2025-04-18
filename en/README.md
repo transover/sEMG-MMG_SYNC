@@ -13,7 +13,7 @@
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="NITaskArchitecture" style="height: 350px; max-width: 45%; object-fit: contain;">
 </div>
 
-# 使用说明
+# 介绍
 表面肌电信号和肌磁信号的同步采集与分析：sEMG-MMG任务，**NI9205** 和 **TCP/IP** 被用于采集由 **Quspin** 和 **BioSemi** 生成的数据。
 - 通过 National Instruments 的 **cDAQ** 单元，完成了 **QuSpin**（OPMs 设备）、**BioSemi**（sEMG/ECG 设备）、**CIYENIC**（肌肉力量设备）等设备的模拟数据采集。该接口实现了多个设备数据流的多线程同步执行，核心技术围绕 **NI-DAQmx**、**PsychToolBox/PsychoPy** 以及 **TCP/IP** 协议展开。**NI-DAQmx** 基于 ctypes 库，是一个复杂且高度面向对象的封装，用于开发 **C API** 实现。串行/并行协议通过串口或并口控制和记录刺激电平（需要 **LPT** 驱动，**InpOut32/64** 是一个开源的 Windows **DLL** 和驱动程序，用于直接访问硬件端口）。
 - **PsychoPy** 基于底层 **PsychToolBox** 控制，结合 OpenGL 的图形渲染优势与简洁的语法，提供刺激呈现与控制，支持异步高精度的计划性定时，广泛应用于认知神经科学和实验心理学研究中。**TCP/IP** 协议通过数据流截取无线实时获取传感器信息。
@@ -21,11 +21,13 @@
 
 对于sEMG-MMG信号获取任务，你可以在 <a href="https://github.com/transover/sEMG-MMG_SYNC/releases/UI_Collector">Release</a> 中下载**UI_Collector.exe** 工具，如下图所示:
 
-<p style="align: center;">
+<p align="center">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
 </p>
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 操作说明
 ### 1. 使用NI9205采集板卡，并安装NI驱动：
 - NI-DAQmx_driver目录下的ni-daqmx_24.0_online.exe，选择默认安装配置即可
 
@@ -60,6 +62,70 @@
         •通道数+触发器 channels:
             这显示了用户选择的通道数（加上触发器）。它由通道项控制，通道项将在专用于参数EEG数据的部分(小节:参数Biosemi)中进行描述。
             该值必须与Biosemi ActiveTwo中报告的值匹配。
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" style="height: auto; width: 50%; object-fit: scale-down;">
+</p>
+
+```        
+class Param:
+    """
+    Data Acquisition Parameter Control Class
+    """
+    device = None                    # ActiveTwo device instance
+    host = '127.0.0.1'               # Host IP address
+    port = 8888                      # Port number
+    SampleFrequency = 2048           # Sampling rate (Hz), recommended value: 2048
+    ChannelNum = 32                  # Number of channels
+    tcpsamples = 4                   # Samples per packet
+    gain = 0.03125                   # Signal gain
+    bytes_data = b''                 # Temporary storage for raw byte data of all channel samples in a packet
+
+    Status = 'off'                                     # Acquisition status ('on' = running, 'off' = stopped)
+    SampleNum = 1                                      # Number of collected samples, including initial point
+    BufferSize = 128                                   # Buffer size (number of samples)
+    time_start, time_end = None, None                  # Task start and end timestamps (datetime objects)
+    Duration = None                                    # Total recording duration (in seconds)
+    IsRecording = False                                # Whether to write data to file in real time
+    WindowLength = 20                                  # Length of the data window (seconds) for displaying recent samples; 
+                                                       # if too large (>1500) it may cause stream buffer overflow errors
+    FileName = './GUI_Output/Data/BioSemiData.txt'     # Path for saving recorded data
+
+    Unit = 'uV'  # Data unit
+    buffer = np.zeros((ChannelNum, BufferSize))     # Buffer array of size (channels × buffer_size), e.g., 32×128
+    time = np.linspace(0, SampleNum / SampleFrequency, num=SampleNum, endpoint=False)  # Time vector (includes 0 at the start), size: samples
+    data = np.zeros((ChannelNum, SampleNum))        # Data array (includes initial zeros), size: channels × samples
+```
+```
+class NI_Param:
+    """
+    NI Acquisition Parameters (Parameters)
+    """
+    DeviceTypeName = 'NI9205'                          # Hardware name of the acquisition card (for reference only, not used in the program)
+    DeviceName = 'cDAQ1Mod1'                           # Device name (can be found in NI-MAX, e.g., cDAQ1Mod1)
+    Status = 'on'                                      # Acquisition status ('on' means reading, 'off' means stopped)
+    SampleFrequency = 1000                             # Sampling rate (Hz), recommended value is 1000
+    SampleNum = 1                                      # Number of sample points, including the starting point
+    DropSampleNum = 1                                  # Number of sample points collected before recording starts
+    callback_samples = 0                               # Actual amount of data read per channel in the callback
+    BufferSize = 100                                   # Data buffer size per channel
+    CallbackSize = BufferSize                          # Threshold of data amount to trigger the callback
+    buffer_in_size_cfg = round(BufferSize * 1)         # Internal buffer size, for clock configuration
+    ChannelNum = 30                                    # Number of valid AI channels set for the NI device (NI9205 has 10 physical slots; OPMs use Bx, By, and Bz axes per slot, resulting in 30 AI channels)
+    Unit = 'V'                                         # Unit of the data
+    MaxVoltage, MinVoltage = 10.0, -10.0               # Maximum and minimum analog voltages (V)
+    time_start, time_end = None, None                  # Start and end times of the task (datetime, when "start" is clicked)
+    time_start_acquire, time_end_acquire = None, None  # Start and end times of data acquisition (datetime, when "record" is clicked)
+    Duration = None                                    # Total recording duration (s)
+    IsRecording = False                                # Whether real-time file writing is enabled
+    WindowLength = 10                                  # Length of the latest data window (s); defines maximum data size; if too large (>1500), may cause stream buffer overflow errors
+    start_time_list = []                               # List of timestamps for each task start
+    stop_time_list = []                                # List of timestamps for each task pause
+    FileDir = './GUI_Output/Data'                      # Directory for saving data
+    FileName = 'NewTempData.txt'                       # Filename for saving data
+    FilePath = os.path.join(FileDir, FileName)         # Full path for saving data
+```
+
 ### 4. 启动UI_Collector，并安装Help指示完成数据采集
 1.  启动软件，硬件连接NI9205则可见 **【连接状态】** 指示灯亮，否则弹出错误提示
 2.  勾选 **【启用肌电】**，可见 **【肌电】** 指示灯亮
@@ -79,3 +145,16 @@
 16.  鼠标悬停可查看各按钮的功能信息
 ### 5. 如果需要并口打标，需要按照Help指示另外配置驱动文件
 - 通过界面上的菜单栏按钮，可以更改界面语言
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
+</p>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# License
+- 本存储库中的文本、代码、图像、照片和视频均遵循许可 [BSL-1.0 license](https://github.com/transover/sEMG-MMG_SYNC/blob/main/LICENSE)
+  
+# **🙏 支持**  
+- 如果您认为本页面内容对您有些许帮助，请点击页面右上角的 **Star** :star: 表示赞同和支持，谢谢！
+- 如果您遇到任何问题，请通过 `708842749@qq.com` 与作者联系，反馈以获得进一步支持。
+
+
