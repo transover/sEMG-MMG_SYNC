@@ -26,6 +26,8 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
 </div>
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Operations 
 ### 1. Using the NI9205 Acquisition Board and Installing the NI Driver:
 - In the `NI-DAQmx_driver` directory, run `ni-daqmx_24.0_online.exe` and select the default installation settings.
 - Open the device Manager and check whether the driver items under `NI Data Acquisition Devices` are displayed correctly, such as `cDAQ-9171`, `NI9205(DSUB)`
@@ -181,7 +183,8 @@ class NI_Param:
 - **Windows**: [nidaqmx API](https://nidaqmx-python.readthedocs.io/en/latest/index.html)  [ni-daqmx_24.0_online.exe](https://github.com/transover/sEMG-MMG_SYNC/releases/NI9205)
 - **Windows**: [ActiView806.exe](https://www.biosemi.com/download.htm)  
 
-### **🙏 Others**  
+# Feedback
+### **🙏 Support**  
 - If this content is helpful to you, please click **Star** :star:  on the top right corner of the page to show your support. Thank you!
 - If you encounter any issues, please contact the author at `transover@buaa.edu.cn` for support. 
 
