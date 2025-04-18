@@ -152,8 +152,9 @@ class NI_Param:
 - New functions such as **Magnetomyography (MMG)**, **Electromyography (EMG)**, **Muscle Power Assessment (MPA)** have been added.
 - The main interface supports translation between Chinese and English by **[Settings]** in the menubar
 - Enable preloading of subject information, real-time data acquisition, display and saving, and uses process isolation and asynchronous execution in multiple tasks. There is no need to worry about conflicts in tasks such as audio stimulation, data collection, real-time data file writing and dynamic image display.
-- The **NI9205** hardware voltage bias has been added. The baseline voltage detected when no hardware is connected (which can be regarded as a constant amount for a short period of time) has been software-calibrated in the program (updated on '2024-5-16 23:08').
-- After clicking the button **[Record]**, enter the automatic save mode. The save location is in the './GUI_Output' directory of the same directory as exe. The data composition can be seen in './Help'.
+- Added PDF export function and timing viewing function.
+- The **NI9205** hardware voltage bias has been added. The baseline voltage detected when no hardware is connected (which can be regarded as a constant amount for a short period of time) has been software-calibrated in the program (updated on `2024-5-16 23:08`).
+- After clicking the button **[Record]**, enter the automatic save mode. The save location is in the `./GUI_Output` directory of the same directory as exe. The data composition can be seen in `./Help`.
 
 ### **⚡ Improvement**  
 - **Performance Enhancement**: Developed in environments like `gcc` and `python310`, compiled into `C` project files, achieving a speed increase of over 30% for the modules.  
@@ -162,13 +163,14 @@ class NI_Param:
 - **UI Enhancement**: Developed using the `ctypes` library, supporting the `nidaqmx` library (implementing complex, highly object-oriented wrappers around the `NI-DAQmx C API`).  
 
 ### **🐛 Bug Fixes**  
-- It perfectly solved the 'stream' buffer overflow error that occurred in the task of nidaqmx, avoiding data loss in long-term tasks (this error was caused by the accumulation of data volume leading to heavy memory burden, resulting in a delay of assignment operation for about 30 minutes, and then callback delay).
+- It perfectly solved the `stream` buffer overflow error that occurred in the task of `nidaqmx`, avoiding data loss in long-term tasks (This error was caused by the accumulation of data volume leading to heavy memory burden, resulting in a delay of assignment operation for about 30 minutes, and then callback delay).
 - Fixed thread crash issues caused by `Process finished with exit code -1073741819 (0xC0000005)` access violation errors.  
 - Resolved missing driver compatibility issues for `psychopy.parallel._inpout`.  
 - Fixed `UnboundLocalError`, `FileNotFoundError`, and crash issues caused by missing temporary compressed packages (embedded resources).  
 
 ### **📦 Dependency Updates**  
-- Upgraded `psychopy` to version 2023.  
+- Upgraded `psychopy` to version 2023.
+- Please ensure that the parallel driver is correctly configured to prevent the `_inpout` dependency of psychopy from reporting errors(**[Important]**). Otherwise, delete the `inpout32.dll`, `inpoutx64.dll` or `dlportio` related files in the  directory: `C:\Windows\System32`.
 - File resources are located under the `./GUI_Package` directory in the compressed package, where users can modify participant information files (csv) and bias files (pkl).  
 
 ### **⬇️ Download Links**  
