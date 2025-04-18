@@ -49,7 +49,9 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 4. Be careful to select the number of channels; otherwise, even if the connection is successful, data cannot be read.
 5. Streaming through TCP/IP introduces several hundred milliseconds of delay and tens of milliseconds of jitter. Data streamed via TCP/IP cannot be used directly for precise timing and requires buffering.
 
-<img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" align="center" style="height: auto; width: 50%; object-fit: scale-down;">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" style="height: auto; width: 50%; object-fit: scale-down;">
+</p>
 
 #### Parameters (TCP/IP parameters used for connecting with Biosemi):
 - IP address (host):
@@ -141,7 +143,9 @@ class NI_Param:
 > 16. Hover the mouse over any button to view its function information.
 
 ### 5. If Parallel Port Triggering is Needed, Follow Help Instructions to Configure Additional Driver Files
-<img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" align="center" style="height: auto; width: 80%; object-fit: scale-down;">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
+</p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # License
@@ -170,7 +174,7 @@ class NI_Param:
 
 ### **📦 Dependency Updates**  
 - Upgraded `psychopy` to version 2023.
-- Please ensure that the parallel driver is correctly configured to prevent the `_inpout` dependency of psychopy from reporting errors(**[Important]**). Otherwise, delete the `inpout32.dll`, `inpoutx64.dll` or `dlportio` related files in the  directory: `C:\Windows\System32`.
+- Please ensure that the parallel driver is correctly configured to prevent the `_inpout` dependency of psychopy from reporting errors(**Important**). Otherwise, delete the `inpout32.dll`, `inpoutx64.dll` or `dlportio` related files in the  directory: `C:\Windows\System32`.
 - File resources are located under the `./GUI_Package` directory in the compressed package, where users can modify participant information files (csv) and bias files (pkl).  
 
 ### **⬇️ Download Links**  
@@ -178,6 +182,6 @@ class NI_Param:
 - **Windows**: [ActiView806.exe](https://www.biosemi.com/download.htm)  
 
 ### **🙏 Others**  
-- If this content is helpful to you, please click Star :star:  on the top right corner of the page to show your support. Thank you!
+- If this content is helpful to you, please click **Star** :star:  on the top right corner of the page to show your support. Thank you!
 - If you encounter any issues, please contact the author at `transover@buaa.edu.cn` for support. 
 
