@@ -1,9 +1,9 @@
 <div style="display: flex; align-items: center; gap: 1em;">
   <img src="https://github.com/user-attachments/assets/b04f1bf5-3ece-43a2-8388-e098fa0c9168" alt="logo" style="height: 50px; object-fit: contain;">
   <div>
-    <a>English</a>
+    <a><b>English</b></a>
     ｜
-    <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/README.md">简体中文</a>
+    <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/README.md"><b>简体中文</b></a>
   </div>
 </div>
 
