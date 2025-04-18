@@ -1,3 +1,14 @@
+<div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="SchematicDiagram_SignalAcquisition" style="height: 350px; max-width: 45%; object-fit: contain;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg" alt="NITaskArchitecture" style="height: 350px; max-width: 45%; object-fit: contain;">
+</div>
+
+<p align="center">
+  <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/README.md">English</a>
+  ｜
+  简体中文
+</p>
+
 # 使用说明
 表面肌电信号的同步采集与分析。采用NI9205和TCP/IP采集Quspin和BioSemi生成的数据。
 获取sEMG-MMG任务，可以在Release中下载“UI_Collector.exe”工具，如下图所示：
