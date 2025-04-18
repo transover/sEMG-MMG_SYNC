@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Collector_HelpInfo</title>
+        <style>
+          .general-title { /* 总标题 */
+              text-align: center;  /* 居中对齐 */
+              margin-top: 0;       /* 顶部外边距 */
+              font-size:12pt;
+              font-weight:700;
+              text-decoration: underline;  /* 下划线 */
+          }
+          .section-title{   /* 章节标题 */
+              font-size:11pt;
+              font-weight:600;
+              color: #04782b;
+          }
+          .section-subtitle{   /* 章节小标题 */
+              font-size:10pt;
+              font-weight:500;
+              color: #231111;
+          }
+          .content-text {  /* 文本内容 */
+              text-align: left;   /* 左对齐 */
+              margin-top: 20px;   /* 顶部外边距 */
+              font-size:9pt;
+              font-weight:300;
+          }
+
+          .contact-container{    /* 联系方式容器 */
+              display: flex;
+              justify-content: flex-end;  
+              text-align: right; /*左对齐*/
+          }
+          .contact-keyword{  /* 联系方式关键字 */
+              font-weight:500;
+          }
+          .contact-text {  /* 联系方式文本 */
+              text-align: left; /* 左对齐 */
+              margin-top: 20px; /* 顶部外边距 */
+              font-size:9pt;
+              font-weight:300;
+          }
+
+
+          .keyword-index {   /* 关键序号内容 */
+              font-weight:500;
+              color: #a00303;
+          }
+          .keyword-text {   /* 关键字内容 */
+              font-weight:500;
+              color: #0d19fd;
+          }
+        </style>
+    </head>
+
+    <body>
+    	<header>
+            <div class="general-title">
+                <p><br>采集系统说明</p>
+            </div>
+            <p class="content-text">
+                <br>⠀⠀通过美国国家仪器公司（National Instruments）的cDAQ单元对QuSpin（OPMs器件）、BioSemi（sEMG器件）、CIYENIC（肌力器件）等器件进行模拟数据采集。
+                本界面引出多路不同设备的数据流，多线程同步执行，核心技术围绕NI-DAQmx、PsychToolBox/PsychoPy和TCP/IP协议开展。
+                NI-DAQmx基于ctypes库，是开发 C API实现的一个复杂的、高度面向对象的包装器。
+                Serial/Parallel协议通过串口或并口控制并记录刺激电平（需配置LPT驱动，InpOut32/64 是一个开源的 Windows DLL 和驱动程序，用于直接访问硬件端口）。
+                PsychoPy基于PsychToolBox底层控制，将 OpenGL 的图形渲染优势与语法相结合，提供刺激演示和控制，具有异步高精度计划时序，用于认知神经科学和实验心理学研究。
+                TCP/IP协议通过数据流截取，无线方式获取实时传感器信息。
+                <br>⠀⠀使用方法为，在连接状态、显示状态、采集状态、刺激指示灯全亮状态下，点击开始记录数据，点击暂停结束记录，数据将自动保存为3个独立文件。
+            </p>
+            <br><br><br>
+            <span class="section-title" id="0">目录</span>
+            <ul id="url_QT" class="section-subtitle">
+                <li><a href="#1">课题简介</a></li>
+                <li><a href="#2">操作说明</a></li>
+                <li><a href="#3">功能特性</a></li>
+                <li><a href="#4">注意事项</a></li>
+                <li><a href="#5">总结概述</a></li>
+                <li><a href="#6">联系方式</a></li>
+            </ul>
+        </header><br>
+
+        <section class="section_QT" id="1">
+            <div class="content-text">
+                <a href="#0"><span class="section-title">课题简介</span></a>
+                <p>
+                ⠀⠀肌磁图（<a href="https://scholar.google.com/scholar?oi=gsb95&q=Magnetomyography&lookup=0&hl=zh-CN">Magnetomyography</a>），简称 MMG ，是通过电活动测量人体骨骼肌中产生的磁信号。磁信号将被记录为磁场矢量随时间变化的分量，磁场矢量由随骨骼肌纤维运动的电流产生动作电位。使用肌磁图MMG对生物磁场（Biomagnetic Field）进行信号检测，比EMG具有更高的信号源定位能力和信噪比，其具备非侵入性、非接触检测、高生物相容性、高集成可植入特性，与成熟的肌电图(EMG)方法相比，已成为一种有效的替代方法。
+                </p>
+            </div>
+        </section><br>
+
+        <section class="section_QT" id="2">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">操作说明</span></a>
+                    <br>1.启动软件，硬件连接NI9205则可见【连接状态】指示灯亮，否则弹出错误提示
+                    <br>2.勾选【启用肌电】，可见【肌电】指示灯亮
+                    <br>3.输入刺激信息，点击【刺激呈现】，弹出实验范式提示，点击【OK】可见【刺激】指示灯亮
+                    <br>4.点击【记录】，可见【采集状态】指示灯亮，表示数据流将实时写入文件（记录精确时间需要先点击【记录】进入记录模式，再点击【开始】）
+                    <br>5.点击【开始】，可见【显示状态】指示灯亮，表示NI任务开启，开始采集并显示数据（如果没有点击【记录】则数据仅预览而不保存）
+                    <br>6.点击【停止】，【显示状态】和【采集状态】指示灯灭，表示采集或预览任务暂停（在刺激呈现模式下不可再次点击【开始】）
+                    <br>7.点击【关闭】，可见所有指示灯灭，表示任务结束，此时若要再次采集需重启软件
+                    <br>8.（记录模式下无需）点击【保存】，将图中局部数据保存到自定义文件（注：全部数据时不推荐使用，实时数据可自动保存，使用该方式长时间记录需要大量内存）
+                    <br>9.点击工具栏【导出(PDF)】，可导出实验信息为PDF文件
+                    <br>10.点击工具栏【查看时序】，可查看时序信息，比较各模态的起止时间和延时
+                    <br>11.点击工具栏【绘制图像】，可绘制高清图像，预览采集数据
+                    <br>12.勾选【启用滤波】，可对实时图像滤波，不影响写入的数据
+                    <br>13.勾选【启用转换】，可切换实时图像的数据单位并自动转换数值（在【页面2】中可配置通道模态）
+                    <br>14.点选【通道选择】，可切换要显示的通道
+                    <br>15.控件栏小组件，控制实时图像显示的播放、暂停、全局、缩放、移除
+                    <br>16.鼠标悬停可查看各按钮的功能信息
+                </p>
+            </div>
+        </section><br>
+
+        <section class="section_QT" id="3">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">功能特性</span></a>
+                    <br>⠀⠀<span class="section-subtitle">刺激特性</span>
+                    <br>⠀⠀⠀⠀1.异步操作：声音播放在后台工作，而代码继续执行其他操作
+                    <br>⠀⠀⠀⠀2.计划播放：在某些系统设置中，计划的播放开始可以精确到亚毫秒级别
+                    <br>⠀⠀⠀⠀3.低延时高精度：允许以非常低的开始延迟即时开始声音播放
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">ERP事件</span>
+                    <br>⠀⠀⠀⠀ERP事件之间的时间距离长度可以用2个指标来衡量：
+                    <br>⠀⠀⠀⠀1."刺激起始时间差"（stimulus onset asynchrony，SOA，即从上一个刺激出现的时间到下一个刺激出现的时间）
+                    <br>⠀⠀⠀⠀2."刺激间间隔"（inter-stimulus interval，ISI，即从上一个刺激消失的时间到下一个刺激出现的时间）
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">串口打标</span>
+                    <br>⠀⠀⠀⠀1.生理：
+                    <br>⠀⠀⠀⠀{零时刻（音频播放）→声音传导至耳蜗}=6ms
+                    <br>⠀⠀⠀⠀→{耳蜗响应→大脑听觉反应}=10ms
+                    <br>⠀⠀⠀⠀→{脊髓神经传导→肌肉响应产生（MMG、EMG信号产生）}=20ms
+                    <br>⠀⠀⠀⠀→{动作到位触发传感阈值（肌力信号）}= ?ms
+                    <br>⠀⠀⠀⠀⠀⠀eg：零时刻后60ms
+                    <br>⠀⠀⠀⠀2.刺激：
+                    <br>⠀⠀⠀⠀{零时刻（音频播放）→串口数字信号发出时刻→串口模拟电平发送}= 5~73ms
+                    <br>⠀⠀⠀⠀→{NI采集到模拟电压并量化→上位机刺激信号记录}= 58ms
+                    <br>⠀⠀⠀⠀⠀⠀eg: 零时刻后123ms
+                    <br>⠀⠀⠀⠀3.数据1：
+                    <br>⠀⠀⠀⠀{肌肉响应产生（MMG、EMG信号产生）→ 传感器测量完毕}= 0ms
+                    <br>⠀⠀⠀⠀→{NI采集到模拟电压并量化→上位机数据记录}=58ms
+                    <br>⠀⠀⠀⠀⠀⠀eg: 零时刻后100ms
+                    <br>⠀⠀⠀⠀4.数据2：
+                    <br>⠀⠀⠀⠀{肌肉动作产生（肌力信号产生）→ 动作触发弹性元件阈值 → 传感器测量过程}= ?ms
+                    <br>⠀⠀⠀⠀→{NI采集到模拟电压并量化→上位机数据记录}=58ms
+                    <br>⠀⠀⠀⠀⠀⠀eg: 零时刻后500ms
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">串口延时</span>
+                    <br>⠀⠀⠀⠀1.使用串口打标，发送数据位时，实测得到80个bit指令发送一次的硬件耗时为8.019ms（程序耗时平均7.3ms），则1个bit的发送时间约为0.1ms （已验证）
+                    <br>⠀⠀⠀⠀2.发送8位指令时，其响应会在0.8ms内完成，而1000Hz采样率NI采集的采样间隔为1ms，这可能导致部分响应没有被捕捉（已实验验证）
+                    <br>⠀⠀⠀⠀3.【音频起始时刻】与计划时序的误差最小，故而以此作为标准比较
+                    <br>⠀⠀⠀⠀4.软件延时（程序延迟：首次为声音预载时间，后续每次打标累积延时），实测【串口打标记起始时刻】较【音频起始时刻】的延时为5.64ms，17.42ms，24.02ms，27.53ms，34.56ms，39.40ms，47.51ms，55.43ms，61.98ms，65.54ms
+                    <br>⠀⠀⠀⠀5.硬件延时（NI采集卡数据传至上位机的时间），实测【NI采集的标记起始时刻】较【串口打标记起始时刻】的延时为57.36ms，58.13ms，58.58ms，59.07ms，57.44ms，59.60ms，57.59ms，57.57ms，57.62ms，57.76ms
+                    <br>⠀⠀⠀⠀6.实际延时（音频起始到上位机起始刺激电平记录时间），实测【NI采集的标记起始时刻】较【音频起始时刻】的延时为63ms，75.55ms，82.60ms，86.60ms，92.00ms，99.00ms，105.1ms，113.0ms，119.6ms，123.3ms
+                    <br>⠀⠀⠀⠀7.可见，硬件延时=实际延时-软件延时（其值稳定，均值为58.072ms ± 1.528ms）
+                    <br>⠀⠀⠀⠀8.NI采集卡获取的信号数据与刺激数据，【音频起始时刻】作为零时刻，刺激数据的整体延时计算：软件延时（有记录）+硬件延时（固定值：58ms）
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">动态链接库（dll）</span>
+                    <br>⠀⠀⠀⠀1.InpOut32/64 是一个开源的 Windows DLL 和驱动程序，用于直接访问硬件端口（用户级程序的并行和串行端口）
+                    <br>⠀⠀⠀⠀文件夹名称：“InpOutBinaries_1501.zip” （含有InpOutx64.dll 和 InpOutx32.dll 文件）
+                    <br>⠀⠀⠀⠀下载地址：<a href="https://www.highrez.co.uk/Downloads/InpOut32/">https://www.highrez.co.uk/Downloads/InpOut32/</a>
+                    <br>⠀⠀⠀⠀2.在解压后的文件夹中，首先点击win32文件夹中.exe安装驱动文件，此处是保证inpoutx64.sys 模块已安装。
+                    <br>⠀⠀⠀⠀另一种方法是将inpoutx64.sys文件下载后，放置到 <a href="C:/windows/system32/drivers">C:\windows\system32\drivers\</a> 文件夹中⠀⠀⠀⠀
+                    <br>⠀⠀⠀⠀3.将InpOutBinaries_1501.zip中的inpoutx64.dll、inpout32.h 、inpoutx64.lib 这三个模块（x64 文件夹中）
+                    <br>⠀⠀⠀⠀复制或移动到目录 <a href="C:/windows/system32">C:\windows\system32\</a>（该路径必须位于Windows系统PATH中）。
+                    <br>⠀⠀⠀⠀或者将这些文件放在与 PsychoPy 实验文件（具有 .psyexp 文件类型的文件）相同的文件夹中。
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">并口打标</span>
+                    <br>⠀⠀⠀⠀1.检查任务管理器中的LPT驱动是否正常（激活状态，无需接线）
+                    <br>⠀⠀⠀⠀2.将所需引脚设置为高(1)或低(0)，注意只有引脚2-9(包括)通常用于数据输出
+                    <br>⠀⠀⠀⠀3.并口初始化问题
+                    <br>⠀⠀⠀⠀没有并口时，parallel可以初始化是因为parallel模块会尝试使用其他可用的接口来模拟并口通信，比如使用USB接口或者网络通信等
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">记录结果</span>
+                    <br>⠀ 本软件采集完毕，结果将获得5个文件：
+                    <br>⠀⠀⠀⠀1.NI数据文件: <a href="https://github.com/transover/Data_Example">NewTempData_yyyy_MM_dd_HH-mm-ss.txt</a>
+                    <br>⠀⠀存储数据，行表示采样点，列表示模拟输入通道
+                    <br>⠀⠀⠀⠀2.NI配置文件：<a href="https://github.com/transover/Data_Example">NIConfig_yyyy_MM_dd_HH-mm-ss.pkl</a>
+                    <br>⠀⠀包含了采集信息（采样率、通道数、起止时间、设备名称）
+                    <br>⠀⠀⠀⠀3.STI配置文件：<a href="https://github.com/transover/Data_Example">PsychoPy_yyyy_MM_dd_HH-mm-ss.pkl</a>
+                    <br>⠀⠀刺激呈现产生，包含了实验范式信息（刺激、标记、被试、实验描述）
+                    <br>⠀⠀⠀⠀4.肌电数据文件: <a href="https://github.com/transover/Data_Example">BioSemiData_yyyy_MM_dd_HH-mm-ss.txt</a>
+                    <br>⠀⠀启用肌电产生，BioSemi存储数据，行表示采样点，列表示虚拟数据流通道
+                    <br>⠀⠀⠀⠀5.肌电配置文件：<a href="https://github.com/transover/Data_Example">BioSemiConfig_yyyy_MM_dd_HH-mm-ss.pkl</a>
+                    <br>⠀⠀启用肌电产生，BioSemi TCP/IP采集的多种信息（采样率、通道数、起止时间、设备名称）
+                </p>
+            </div>
+        </section><br>
+
+        <section class="section_QT" id="4">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">注意事项</span></a>
+                    <br>⠀⠀<span class="section-subtitle">串扰问题</span>
+                    <br>⠀⠀⠀⠀位置通道间串扰：（2024-5-16 23:18 实测）
+                    <br>⠀⠀⠀⠀⠀⠀1.CH3对CH0和CH1干扰大
+                    <br>⠀⠀⠀⠀⠀⠀2.CH4对CH1和CH2干扰大
+                    <br>⠀⠀⠀⠀⠀⠀3.CH5对CH0和CH2串扰大
+                    <br>⠀⠀⠀⠀⠀⠀4.CH8对CH5和CH6串扰大
+                    <br>⠀⠀⠀⠀⠀⠀5.CH9对CH0,2,6,7串扰大
+                    <br>⠀⠀⠀⠀位置通道内串扰：（2024-5-15 4:50 实测）
+                    <br>⠀⠀⠀⠀⠀⠀1.各位置通道的3个轴通道中，y和z的串扰大
+                    <br>⠀⠀⠀⠀
+                    <br>⠀⠀<span class="section-subtitle">漂移问题</span>
+                    <br>⠀⠀⠀⠀NI9205硬件零漂电压偏置，在空载不接硬件时检测到的基线电压（短期内可视为恒定量）
+                    <br>⠀⠀⠀⠀该偏置已在程序中软件校准（2024-5-16 23:08 更新）
+                    <br>⠀⠀⠀⠀
+                    <br>⠀⠀<span class="section-subtitle">轴通道关系</span>
+                    <br>⠀⠀⠀⠀UI 界面显示的⠀x、y、z轴分别对应于2.5mm音频孔的上段、中段、下段，最下段为地
+                    <br>⠀⠀⠀⠀Quspin中定义的 x、y、z轴分别对应于2.5mm音频孔的下段、中段、上段，最下段为地
+                    <br>⠀⠀⠀⠀
+                    <br>⠀⠀<span class="section-subtitle">多模态类型</span>
+                    <br>⠀⠀⠀⠀肌磁评估 MMG（Magnetomyography）
+                    <br>⠀⠀⠀⠀肌电评估 EMG（Electromyography）
+                    <br>⠀⠀⠀⠀肌力评估 MPA（Muscle Power Assessment）
+
+                </p>
+            </div>
+
+        </section><br>
+
+        <section class="section_QT" id="5">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">总结概述</span></a>
+                    <br>⠀⠀EMG是评估骨骼肌电活动的方法，MMG是测量骨骼肌磁场的方法，肌肉磁场与神经电流的关系服从麦克斯韦-安培定律，时变电流产生磁场即骨骼肌收缩的瞬时神经电流产生磁场，从而可用MMG测量。
+                    <br>⠀⠀MMG比之EMG有诸多优点：
+                    <br>⠀⠀⠀⠀1.MMG提供了一种新型的肌肉研究分析手段
+                    <br>⠀⠀⠀⠀2.MMG支持无创测量，提供对深层肌肉活动的全面信息
+                    <br>⠀⠀⠀⠀3.EMG存在电衰减现象，MMG与神经初级电流的耦合性更强
+                    <br>⠀⠀⠀⠀4.MMG具备磁场的矢量特性，拥有更高的空间分辨率，易于对信号源定位
+                    <br>⠀⠀⠀⠀5.MMG理论上经过预处理可以提供比EMG更高的信噪比
+                    <br>
+
+                </p>
+            </div>
+
+        </section><br>
+
+        <section class="section_QT" id="6">
+            <div class="contact-container">
+                <span class="contact-text">
+                    <br><span class="contact-keyword">作者: </span>余杭⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    <br><span class="contact-keyword">联系方式：</span><a href="https://mail.qq.com/">708842749@qq.com</a>⠀
+                    <br><span class="contact-keyword">版本：</span>V1.0⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    <br><span class="contact-keyword">时间：</span>2023/11/5 15:54⠀⠀⠀⠀⠀
+                </span>
+            </div>
+        </section><br>
+
+
+    </body>
+</html>

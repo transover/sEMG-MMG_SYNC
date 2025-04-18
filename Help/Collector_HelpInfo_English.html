@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Collector_HelpInfo</title>
+        <style>
+          .general-title { /* 总标题 */
+              text-align: center;  /* 居中对齐 */
+              margin-top: 0;       /* 顶部外边距 */
+              font-size:12pt;
+              font-weight:700;
+              text-decoration: underline;  /* 下划线 */
+          }
+          .section-title{   /* 章节标题 */
+              font-size:11pt;
+              font-weight:600;
+              color: #04782b;
+          }
+          .section-subtitle{   /* 章节小标题 */
+              font-size:10pt;
+              font-weight:500;
+              color: #231111;
+          }
+          .content-text {  /* 文本内容 */
+              text-align: left;   /* 左对齐 */
+              margin-top: 20px;   /* 顶部外边距 */
+              font-size:9pt;
+              font-weight:300;
+          }
+
+          .contact-container{    /* 联系方式容器 */
+              display: flex;
+              justify-content: flex-end;  
+              text-align: right; /*左对齐*/
+          }
+          .contact-keyword{  /* 联系方式关键字 */
+              font-weight:500;
+          }
+          .contact-text {  /* 联系方式文本 */
+              text-align: left; /* 左对齐 */
+              margin-top: 20px; /* 顶部外边距 */
+              font-size:9pt;
+              font-weight:300;
+          }
+
+
+          .keyword-index {   /* 关键序号内容 */
+              font-weight:500;
+              color: #a00303;
+          }
+          .keyword-text {   /* 关键字内容 */
+              font-weight:500;
+              color: #0d19fd;
+          }
+        </style>
+    </head>
+
+    <body>
+    	<header>
+            <div class="general-title">
+                <p><br>Acquisition System Description</p>
+            </div>
+            <p class="content-text">
+                <br>⠀⠀Analog data acquisition of QuSpin (OPMs device), BioSemi (sEMG device), CIYENIC (muscle force device) and other devices is performed through the cDAQ unit of National Instruments.
+                This interface leads to multiple data streams of different devices, multi-threaded synchronous execution, the core technology around NI-DAQmx, PsychToolBox/PsychoPy and TCP/IP protocols.
+                NI-DAQmx is based on the ctypes library and is a complex, highly object-oriented wrapper for developing C API implementations.
+                The Serial/Parallel protocol controls and records stimulus levels via a serial port or parallel port (LPT driver required, InpOut32/64 is an open source Windows DLL and driver for direct access to hardware ports).
+                PsychoPy is based on the underlying controls of the PsychToolBox, combining the graphics rendering benefits of OpenGL with syntax to provide stimulus presentation and control, with asynchronous high-precision planned timing, for cognitive neuroscience and experimental psychology research.
+                TCP/IP protocol wirelessly obtains real-time sensor information through data stream interception.
+                <br>⠀⠀When the connection state, display state, acquisition state, and stimulus indicator light are all on, click to start recording data and click Pause to end recording, and the data will be automatically saved as 3 independent files.
+            </p>
+            <br><br><br>
+            <span class="section-title" id="0">目录</span>
+            <ul id="url_QT" class="section-subtitle">
+                <li><a href="#1">Introduction</a></li>
+                <li><a href="#2">Operation</a></li>
+                <li><a href="#3">Characteristics</a></li>
+                <li><a href="#4">Notice</a></li>
+                <li><a href="#5">Conclusion</a></li>
+                <li><a href="#6">Contact</a></li>
+            </ul>
+        </header><br>
+
+        <section class="section_QT" id="1">
+            <div class="content-text">
+                <a href="#0"><span class="section-title">Introduction</span></a>
+                <p>
+                ⠀⠀Magnetomyography（<a href="https://scholar.google.com/scholar?oi=gsb95&q=Magnetomyography&lookup=0&hl=zh-CN">Magnetomyography</a>）, MMG for short, is the measurement of magnetic signals generated in the skeletal muscles of the human body through electrical activity. The magnetic signal will be recorded as the time-varying component of the magnetic field vector, which generates an action potential from the current moving with the skeletal muscle fibers. The use of MMG for Biomagnetic Field signal detection has a higher signal source location capability and signal-to-noise ratio than EMG, and it has non-invasive, non-contact detection, high biocompatibility, and high integration implanting characteristics, which has become an effective alternative method compared with mature electromyography (EMG) method.
+                </p>
+            </div>
+        </section><br>
+
+        <section class="section_QT" id="2">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">Operation</span></a>
+                    <br>1.Start the software. If the hardware is connected to NI9205, the [Connection Status] indicator will light up; otherwise, an error message will pop up.
+                    <br>2.Check [Enable EMG], and the [EMG] indicator will light up.
+                    <br>3.Enter stimulation information, click [Stimulus On], and an experimental paradigm prompt will pop up. Click [OK], and the [Stimulus] indicator will light up.
+                    <br>4.Click [Record], and the [Acquisition Status] indicator will light up, indicating that the data stream will be written to the file in real time (to record precise timing, click [Record] first to enter recording mode, then click [Start]).
+                    <br>5.Click [Start], and the [Display Status] indicator will light up, indicating that the NI task has started, and data collection and display have begun (if [Record] is not clicked, the data will only be previewed and not saved).
+                    <br>6.Click [Stop], and the [Display Status] and [Acquisition Status] indicators will turn off, indicating that the collection or preview task is paused (in stimulation presentation mode, [Start] cannot be clicked again).
+                    <br>7.Click [Close], and all indicators will turn off, indicating the task has ended. To collect data again, the software must be restarted.
+                    <br>8.(Not required in recording mode) Click [Save] to save partial data from the graph to a custom file (Note: Not recommended for full data. Real-time data can be saved automatically. Using this method for long-term recording requires a large amount of memory).
+                    <br>9.Click the toolbar [Export PDF] to export experimental information as a PDF file.
+                    <br>10.Click the toolbar [View] to view timing information and compare the start/end times and delays of each modality.
+                    <br>11.Click the toolbar [Plot] to plot high-definition graphs and preview collected data.
+                    <br>12.Check [Enable Filter] to filter real-time graphs without affecting the written data.
+                    <br>13.Check [Enable Unit] to switch the data units of real-time graphs and automatically convert values (channel modalities can be configured in [Page 2]).
+                    <br>14.Select [Choose CH] to switch the channels to be displayed, [Current CH] will show the selected channel index.
+                    <br>15.The control bar widgets control the playback, pause, global view, zoom, and removal of real-time graphs.
+                    <br>16.Hover the mouse to view functional information about each button.
+                </p>
+            </div>
+        </section><br>
+
+        <section class="section_QT" id="3">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">Characteristics</span></a>
+                    <br>⠀⠀<span class="section-subtitle">Stimulus</span>
+                    <br>⠀⠀⠀⠀1. Asynchronous operation: Sound playback works in the background while the code continues to perform other operations
+                    <br>⠀⠀⠀⠀2. Scheduled play: In some system Settings, the start of scheduled play can be accurate to the sub-millisecond level
+                    <br>⠀⠀⠀⠀3. Low delay and high precision: allows instant sound playback with very low start delay
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">ERP</span>
+                    <br>⠀⠀⠀⠀The length of time between ERP events can be measured by two metrics:
+                    <br>⠀⠀⠀⠀1." stimulus onset asynchrony "(SOA, i.e. from the time of the previous stimulus to the time of the next stimulus)
+                    <br>⠀⠀⠀⠀2." inter-stimulus interval "(ISI), which is the time between the disappearance of the previous stimulus and the appearance of the next stimulus.
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">Serial Marking</span>
+                    <br>⠀⠀⠀⠀1.Physiological:
+                    <br>⠀⠀⠀⠀{Zero time (audio playback) → Sound is transmitted to the cochlea}=6ms
+                    <br>⠀⠀⠀⠀→{Cochlear response → Brain auditory response}=10ms
+                    <br>⠀⠀⠀⠀→{Spinal cord nerve conduction → muscle response generation (MMG, EMG signal generation）}=20ms
+                    <br>⠀⠀⠀⠀→{Action in place triggers sensing threshold (muscle strength signal)}= ?ms
+                    <br>⠀⠀⠀⠀⠀⠀eg：60ms after zero time
+                    <br>⠀⠀⠀⠀2.Stimulus：
+                    <br>⠀⠀⠀⠀{Zero time (audio playback) → Serial port digital signal time → serial port analog level transmission}= 5~73ms
+                    <br>⠀⠀⠀⠀→{NI collects the analog voltage and quantifies it to record the stimulation signal of the upper computer}= 58ms
+                    <br>⠀⠀⠀⠀⠀⠀eg: 123ms after zero time
+                    <br>⠀⠀⠀⠀3.Data1：
+                    <br>⠀⠀⠀⠀{Muscle response generation (MMG, EMG signal generation) → Sensor measurement completed}= 0ms
+                    <br>⠀⠀⠀⠀→{NI collects the analog voltage and quantizes it → the data is recorded on the host computer}=58ms
+                    <br>⠀⠀⠀⠀⠀⠀eg: 100ms after zero time
+                    <br>⠀⠀⠀⠀4.Data2：
+                    <br>⠀⠀⠀⠀{Muscle action generation (muscle force signal generation) → action trigger elastic element threshold → sensor measurement process}= ?ms
+                    <br>⠀⠀⠀⠀→{NI collects the analog voltage and quantizes it → the data is recorded on the host computer}=58ms
+                    <br>⠀⠀⠀⠀⠀⠀eg: 500ms after zero time
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">Serial Delay</span>
+                    <br>⠀⠀⠀⠀1.When the serial port is used to mark and send data bits, the hardware time of sending 80 bit instructions once measured is 8.019ms (the average program time is 7.3ms), then the sending time of 1 bit is about 0.1ms (verified).
+                    <br>⠀⠀⠀⠀2.When 8-bit instructions are sent, the response is completed within 0.8ms, while the sampling interval of 1000Hz sampling rate NI acquisition is 1ms, which may result in some responses not being captured (experimentally verified).
+                    <br>⠀⠀⠀⠀3.The error between [audio start time] and the planned timing is minimal, so it is used as a standard comparison
+                    <br>⠀⠀⠀⠀4.Software delay (program delay: the first time is the sound preload time, and the cumulative delay of each subsequent marking), the measured delay between [serial port marking start time] and [audio start time] is 5.64ms，17.42ms，24.02ms，27.53ms，34.56ms，39.40ms，47.51ms，55.43ms，61.98ms，65.54ms
+                    <br>⠀⠀⠀⠀5.Hardware delay (NI acquisition card data transmission time to the top computer), measured [NI acquisition marking start time] compared with the serial port marking start time] delay is 57.36ms，58.13ms，58.58ms，59.07ms，57.44ms，59.60ms，57.59ms，57.57ms，57.62ms，57.76ms
+                    <br>⠀⠀⠀⠀6.The actual delay (the recording time from the audio start to the initial stimulus level of the upper computer), the delay between the measured [mark start time of NI acquisition] and the [audio start time] is 63ms，75.55ms，82.60ms，86.60ms，92.00ms，99.00ms，105.1ms，113.0ms，119.6ms，123.3ms
+                    <br>⠀⠀⠀⠀7.It can be seen that hardware delay = actual delay - software delay (its value is stable, with an average of 58.072ms ± 1.528ms)
+                    <br>⠀⠀⠀⠀8.Signal data and stimulus data obtained by NI acquisition card, [audio start time] as zero time, the overall delay calculation of stimulus data: software delay (recorded) + hardware delay (fixed value: 58ms)
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">Dynamic Link Library（dll）</span>
+                    <br>⠀⠀⠀⠀1.InpOut32/64 is an open source Windows DLL and driver for direct access to hardware ports (parallel and serial ports for user-level programs).
+                    <br>⠀⠀⠀⠀Folder name: "InpOutBinaries_1501.zip" (containing InpOutx64.dll and InpOutx32.dll files)
+                    <br>⠀⠀⠀⠀Download link：<a href="https://www.highrez.co.uk/Downloads/InpOut32/">https://www.highrez.co.uk/Downloads/InpOut32/</a>
+                    <br>⠀⠀⠀⠀2.In the extracted folder, first click on the win32 folder.exe to install the driver file, here is to ensure that the inpoutx64.sys module is installed.
+                    <br>⠀⠀⠀⠀The other way: Place inpoutx64.sys into the folder <a href="C:/windows/system32/drivers">C:\windows\system32\drivers\</a> ⠀⠀⠀⠀
+                    <br>⠀⠀⠀⠀3.Copy or move the three modules inpoutx64.dll, inpout32.h, and inpoutx64.lib (in the x64 folder) from InpOutBinaries_1501.zip to a directory <a href="C:/windows/system32">C:\windows\system32\</a>
+                    <br>⠀⠀⠀⠀(The PATH must be in the Windows system path.) Or put these files in the same folder as PsychoPy experiment files (files with a.psyexp file type).
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">Parallel Marking</span>
+                    <br>⠀⠀⠀⠀1.Check whether the LPT driver in the task manager is normal (active, no wiring required)
+                    <br>⠀⠀⠀⠀2.Set the desired pins to high (1) or low (0), noting that only pins 2-9(included) are usually used for data output
+                    <br>⠀⠀⠀⠀3.Parallel port initialization
+                    <br>⠀⠀⠀⠀Parallel can be initialized when there is no parallel port because the parallel module attempts to simulate parallel port communication using other available interfaces, such as USB interfaces or network communication
+                    <br>
+                    <br>⠀⠀<span class="section-subtitle">Record the Results</span>
+                    <br>⠀ The software task is completed, the result will get 5 files：
+                    <br>⠀⠀⠀⠀1.NI data file: <a href="https://github.com/transover/Data_Example">NewTempData_yyyy_MM_dd_HH-mm-ss.txt</a>
+                    <br>⠀⠀Data is stored, with rows representing sampling points and columns representing analog input channels
+                    <br>⠀⠀⠀⠀2.NI config file：<a href="https://github.com/transover/Data_Example">NIConfig_yyyy_MM_dd_HH-mm-ss.pkl</a>
+                    <br>⠀⠀Contains the collection information (sampling rate, number of channels, start-stop time, device name)
+                    <br>⠀⠀⠀⠀3.STIconfig file：<a href="https://github.com/transover/Data_Example">PsychoPy_yyyy_MM_dd_HH-mm-ss.pkl</a>
+                    <br>⠀⠀Stimuli are presented and generated, including experimental paradigm information (stimulus, marker, subject, experiment description).
+                    <br>⠀⠀⠀⠀4.MMG data file: <a href="https://github.com/transover/Data_Example">BioSemiData_yyyy_MM_dd_HH-mm-ss.txt</a>
+                    <br>⠀⠀Enable MMG generation, NI stores data, rows represent sampling points, and columns represent channels
+                    <br>⠀⠀⠀⠀5.EMG config file：<a href="https://github.com/transover/Data_Example">BioSemiConfig_yyyy_MM_dd_HH-mm-ss.pkl</a>
+                    <br>⠀⠀Enable EMG generation, multiple information collected by BioSemi TCP/IP (sample rate, number of channels, start-stop time, device name)
+                </p>
+            </div>
+        </section><br>
+
+        <section class="section_QT" id="4">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">Notice</span></a>
+                    <br>⠀⠀<span class="section-subtitle">Crosstalk</span>
+                    <br>⠀⠀⠀⠀Crosstalk between location channels: (2024-5-16 23:18 measured)
+                    <br>⠀⠀⠀⠀⠀⠀1.CH3 has crosstalk on CH0 and CH1
+                    <br>⠀⠀⠀⠀⠀⠀2.CH4 has crosstalk on CH1 and CH2
+                    <br>⠀⠀⠀⠀⠀⠀3.CH5 has crosstalk on CH0 and CH2
+                    <br>⠀⠀⠀⠀⠀⠀4.CH8 has crosstalk on CH5 and CH6
+                    <br>⠀⠀⠀⠀⠀⠀5.CH9 has crosstalk on CH0,CH2,CH6,CH7
+                    <br>⠀⠀⠀⠀Crosstalk in the axis location channel: (2024-5-15 4:50 measured)
+                    <br>⠀⠀⠀⠀⠀⠀1.In the three axis channels of each position channel, the crosstalk of y and z is large
+                    <br>⠀⠀⠀⠀
+                    <br>⠀⠀<span class="section-subtitle">Drift</span>
+                    <br>⠀⠀⠀⠀NI9205 Hardware zero drift voltage bias, baseline voltage detected when no hardware is loaded (can be considered constant in the short term)
+                    <br>⠀⠀⠀⠀The bias has been calibrated in the program software (2024-5-16 23:08 update)
+                    <br>⠀⠀⠀⠀
+                    <br>⠀⠀<span class="section-subtitle">Axial Channel Relation</span>
+                    <br>⠀⠀⠀⠀The x, y, and z axes displayed on the UI interface correspond to the upper, middle, and lower segments of the 2.5mm audio hole, respectively, and the bottom segment is the ground
+                    <br>⠀⠀⠀⠀The x, y, and z axes defined in Quspin correspond to the lower segment, middle segment, and upper segment of the 2.5mm audio hole, respectively, and the bottom segment is the ground
+                    <br>⠀⠀⠀⠀
+                    <br>⠀⠀<span class="section-subtitle">Multimodal Types</span>
+                    <br>⠀⠀⠀⠀Evaluate MMG（Magnetomyography）
+                    <br>⠀⠀⠀⠀Evaluate EMG（Electromyography）
+                    <br>⠀⠀⠀⠀Evaluate MPA（Muscle Power Assessment）
+
+                </p>
+            </div>
+
+        </section><br>
+
+        <section class="section_QT" id="5">
+            <div class="content-text">
+                <p>
+                    <a href="#0"><span class="section-title">Conclusion</span></a>
+                    <br>⠀⠀EMG is a method to evaluate the electrical activity of skeletal muscle, and MMG is a method to measure the magnetic field of skeletal muscle. The relationship between muscle magnetic field and nerve current follows the Maxwell-Ampere law. The magnetic field generated by time-varying current, that is, the magnetic field generated by instantaneous nerve current of skeletal muscle contraction, can be measured by MMG.
+                    <br>⠀⠀MMG has some advantages over EMG:
+                    <br>⠀⠀⠀⠀1.MMG provides a new means of muscle research and analysis
+                    <br>⠀⠀⠀⠀2.MMG supports non-invasive measurements and provides comprehensive information on deep muscle activity
+                    <br>⠀⠀⠀⠀3.There is electrical attenuation in EMG, and MMG has stronger coupling with the primary current
+                    <br>⠀⠀⠀⠀4.MMG has the vector characteristics of the magnetic field, with higher spatial resolution, easy to locate the signal source
+                    <br>⠀⠀⠀⠀5.MMG can theoretically provide a higher signal-to-noise ratio than sEMG after pre-processing
+                    <br>
+
+                </p>
+            </div>
+
+        </section><br>
+
+        <section class="section_QT" id="6">
+            <div class="contact-container">
+                <span class="contact-text">
+                    <br><span class="contact-keyword">Author: </span>Hang Yu⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    <br><span class="contact-keyword">Contact：</span><a href="https://mail.qq.com/">transover@buaa.edu.cn</a>⠀⠀⠀⠀
+                    <br><span class="contact-keyword">Version：</span>0.0.0.1⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀
+                    <br><span class="contact-keyword">Date：</span>2023/11/5 15:54⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                </span>
+            </div>
+        </section><br>
+
+
+    </body>
+</html>
