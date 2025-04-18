@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.jpg" height=500px style="margin-right:20 px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg"  height=500px style="margin-right:10 px;" />
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.jpg" height=400px style="margin-right:20 px;"/>
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg"  height=400px style="margin-right:10 px;" />
 </p>
 
 <p align="center">
