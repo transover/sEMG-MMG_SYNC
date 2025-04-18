@@ -149,10 +149,16 @@ class NI_Param:
   <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
 
-- Click **[Record]** to turn on the **acquisition state** indicator light and click **[stop]** to stop recording. When the **connection state**, **display state**, **acquisition state** and **stimulus** indicator lights are all on,  and the data will be automatically saved as **6** independent files. As shown in the following figure, multiple experimental tasks were recorded and named by date under the directory `./GUI_Output/Data/`, and each task contains **7** independent files.
+- Click **[Record]** to turn on the **acquisition state** indicator light and click **[stop]** to stop recording. When the **connection state**, **display state**, **acquisition state** and **stimulus** indicator lights are all on,  and the data will be automatically saved as **6** independent files. As shown in the following figure, multiple experimental tasks were recorded and named by date under the directory `./GUI_Output/Data/`, and each task contains **7** independent files:
+- [] The **PDF** file records the brief information of the experiment (which needs to be exported manually), which offers the overall preview;
+- [] **NewTempData.txt** and **BioSemiData.txt** respectively represent the MMG and sEMG data recorded under the autonomous contraction of skeletal muscle;
+- [] **NIConfig.pkl** and **BioSemiConfig.pkl** respectively record the configuration information such as experiments, hardware, channels, and timing of MMG and sEMG;
+- [] **Psychopy.pkl** records the occurrence time of stimuli for event division;
+- [] **Info.txt** records the experimental description information, such as paradigm information and subject information；
+- [] The post-processing results of the above original data are under the **Process** directory (which need to be analyzed and obtained in **UI_Reader.exe**).
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/1cbebcad-cf59-4346-b42b-b863c7d1dcca" alt="Files" style="height: auto; width: 70%; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/1cbebcad-cf59-4346-b42b-b863c7d1dcca" alt="Files" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
   
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
