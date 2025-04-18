@@ -43,7 +43,7 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 4. Be careful to select the number of channels; otherwise, even if the connection is successful, data cannot be read.
 5. Streaming through TCP/IP introduces several hundred milliseconds of delay and tens of milliseconds of jitter. Data streamed via TCP/IP cannot be used directly for precise timing and requires buffering.
 
-<img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" style="height: auto; width: 50%; object-fit: scale-down;">
+<img src="https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d" alt="Data Transfer Protocol-24bit" align="center" style="height: auto; width: 50%; object-fit: scale-down;">
 
 #### Parameters (TCP/IP parameters used for connecting with Biosemi):
     •IP address (host):
@@ -77,6 +77,6 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 > 16. Hover the mouse over any button to view its function information.
 
 ### 5. If Parallel Port Triggering is Needed, Follow Help Instructions to Configure Additional Driver Files
-![Example of signal acquisition process](https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10)
+<img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" align="center" style="height: auto; width: 80%; object-fit: scale-down;">
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
