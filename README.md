@@ -22,10 +22,12 @@ Synchronous acquisition and analysis for sEMG-MMG. **NI9205** and **TCP/IP** wer
 You can download the **UI_Collector.exe** tool in <a href="https://github.com/transover/sEMG-MMG_SYNC/releases/UI_Collector">Release</a> for the task of sEMG-MMG acquisition, as shown in the following figure:
 
 <p align="center">
-<div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 5%; overflow: hidden;">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
-</div>
+  <div>
+    <div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 5%; overflow: hidden;">
+      <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
+      <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
+    </div>
+  </div>
 </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
