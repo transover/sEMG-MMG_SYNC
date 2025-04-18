@@ -32,17 +32,17 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 
 ### 3. Completing TCP/IP Connection and Viewing Acquisition Changes on ActView806 by Selecting A1~A32 After Successful Connection:
 #### Steps:
-        1. When the user starts collecting data, the server's TCP Listening round icon turns green, indicating that Biosemi ActiveTwo is listening and ready to establish a connection.
-        2. After the user runs the client function and connects successfully, the TCP Connected circular icon in Biosemi ActiveTwo will turn green, indicating that Biosemi is transmitting data to the client.
-        3. Read data (Once the connection is established, parameters are disabled and can only be modified after the connection is terminated. The number of bytes received and transmitted is also reported in Biosemi ActiveTwo.)
+1. When the user starts collecting data, the server's TCP Listening round icon turns green, indicating that Biosemi ActiveTwo is listening and ready to establish a connection.
+2. After the user runs the client function and connects successfully, the TCP Connected circular icon in Biosemi ActiveTwo will turn green, indicating that Biosemi is transmitting data to the client.
+3. Read data (Once the connection is established, parameters are disabled and can only be modified after the connection is terminated. The number of bytes received and transmitted is also reported in Biosemi ActiveTwo.)
 
 #### Notes:
-        1. Users must ensure that the TCP/IP function parameters in the client match those set in Biosemi ActiveTwo.
-        2. Note that since Biosemi ActiveTwo acts as a server, a connection cannot be established unless Biosemi ActiveTwo is running in display or recording mode.
-        3. Parameters in Biosemi ActiveTwo are located on the TCP Server tab and must be adjusted before running Biosemi ActiveTwo. Once Biosemi ActiveTwo starts data acquisition, even in display mode, parameters cannot be changed.
-        4. Be careful to select the number of channels; otherwise, even if the connection is successful, data cannot be read.
-        5. Streaming through TCP/IP introduces several hundred milliseconds of delay and tens of milliseconds of jitter. Data streamed via TCP/IP cannot be used directly for precise timing and requires buffering.
-        ![Data Transfer Protocol-24bit](https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d)
+1. Users must ensure that the TCP/IP function parameters in the client match those set in Biosemi ActiveTwo.
+2. Note that since Biosemi ActiveTwo acts as a server, a connection cannot be established unless Biosemi ActiveTwo is running in display or recording mode.
+3. Parameters in Biosemi ActiveTwo are located on the TCP Server tab and must be adjusted before running Biosemi ActiveTwo. Once Biosemi ActiveTwo starts data acquisition, even in display mode, parameters cannot be changed.
+4. Be careful to select the number of channels; otherwise, even if the connection is successful, data cannot be read.
+5. Streaming through TCP/IP introduces several hundred milliseconds of delay and tens of milliseconds of jitter. Data streamed via TCP/IP cannot be used directly for precise timing and requires buffering.
+![Data Transfer Protocol-24bit](https://github.com/user-attachments/assets/20d02826-d712-421e-8cf5-1f521aea045d)
 
 #### Parameters (TCP/IP parameters used for connecting with Biosemi):
         •IP address (host):
