@@ -32,7 +32,7 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 - In the `NI-DAQmx_driver` directory, run `ni-daqmx_24.0_online.exe` and select the default installation settings.
 - Open the device Manager and check whether the driver items under `NI Data Acquisition Devices` are displayed correctly, such as `cDAQ-9171`, `NI9205(DSUB)`
 - In subsequent use, if **UI_collecter.exe** fails to recognize NI9205, you need to match the fields of **NI_Param** in the following program. You must set the hardware name to **cDAQ1Mod1**!
-- If Parallel Port Triggering is Needed, Follow Help Instructions to Configure Additional Driver Files. Please ensure that the parallel driver is correctly configured to prevent the `_inpout` dependency of psychopy from reporting errors(**Important**). Otherwise, delete the `inpout32.dll`, `inpoutx64.dll` or `dlportio` related files in the  directory: `C:\Windows\System32`.
+- If parallel port triggering is needed, follow help instructions to configure additional driver files. Please ensure that the parallel driver is correctly configured to prevent the `_inpout` dependency of psychopy from reporting errors(**Important**). Otherwise, delete the `inpout32.dll`, `inpoutx64.dll` or `dlportio` related files in the  directory: `C:\Windows\System32` to make sure that you can successfully start the software.
 
 ### 2. Using the BioSemi Acquisition Device and Installing the TCP/IP Server:
 - Download `ACTIVIEW806` from the `BioSemi` directory and use it directly. If LabView files are missing, install `LabView RuntimeEngine 2016 (64bit)/setup.exe`.
@@ -151,16 +151,18 @@ class NI_Param:
 
 # Verification
 - The residual magnetism of the magnetic shielding environment under the non-magnetic sEMG device was shown in the following figure. All the residual magnetism in the radial direction is within the magnetic compensation range (<50 nT) and has a small variation range, which indicates the feasibility of the sEMG-MMG hardware configuration.
-- The collected analog data is 100% consistent with the digital signal, demonstrating the lossless and distortionless characteristics of **UI_Collector.exe**. This reflects the accuracy and stability of the acquisition system.
-- Furthermore, from the measured sEMG-MMG signal images, the timing alignment of each trial of the 2 modalities can be seen. These results indicate that we can record sEMG and MMG simultaneously very well and maintain a high modal synchrony between the signals.
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/7b31d3a2-f370-463f-8825-6b2dd570e096" alt="Remanence Orientation" style="height: 200px; width: auto; object-fit: scale-down;">
     <img src="https://github.com/user-attachments/assets/f3e9f52f-61f7-4bbc-85ec-c6a96c953537" alt="Remanence Intensity" style="height: 200px; width: auto; object-fit: scale-down;">
 </p>
+
+- The collected analog data is 100% consistent with the digital signal, demonstrating the lossless and distortionless characteristics of the software **UI_Collector.exe**. This reflects the accuracy and stability of the acquisition system.
+- Furthermore, from the measured sEMG-MMG signal images, the timing alignment of each trial of the 2 modalities can be seen. These results indicate that we can record sEMG and MMG simultaneously very well and maintain a high modal synchrony between the signals.
+
 <p align="center">
     <img src="https://github.com/user-attachments/assets/a023df27-e101-453b-a491-5cf90b1c9850" alt="Analog/Digital Signals" style="height: 150px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/e4912d3b-4b32-4baa-9bec-e93c7993537b" alt="sEMG-MMG Signals" style="height: 150px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/e4912d3b-4b32-4baa-9bec-e93c7993537b" alt="sEMG-MMG Signals" style="height: 160px; width: auto; object-fit: scale-down;">
 </p>
   
 # Results
