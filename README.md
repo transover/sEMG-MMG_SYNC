@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/README.md">English</a>
+  <a>English</a>
   ｜
   <a href="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/README.md">简体中文</a>
 </p>
