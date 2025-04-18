@@ -180,8 +180,10 @@ class NI_Param:
 - File resources are located under the `./GUI_Package` directory in the compressed package, where users can modify participant information files (csv) and bias files (pkl).  
 
 ### **⬇️ Download Links**  
-- **Windows**: [nidaqmx API](https://nidaqmx-python.readthedocs.io/en/latest/index.html)  [ni-daqmx_24.0_online.exe](https://github.com/transover/sEMG-MMG_SYNC/releases/NI9205)
-- **Windows**: [ActiView806.exe](https://www.biosemi.com/download.htm)  
+- **Windows**: <a href="https://github.com/transover/sEMG-MMG_SYNC/releases/UI_Collector">UI_Collector.exe</a>
+- **Windows**: [ni-daqmx_24.0_online.exe](https://github.com/transover/sEMG-MMG_SYNC/releases/NI9205)
+- **Windows**: [ActiView806.exe](https://www.biosemi.com/download.htm)
+- **Reference**: [nidaqmx API](https://nidaqmx-python.readthedocs.io/en/latest/index.html) 
 
 # Feedback
 ### **🙏 Support**  
