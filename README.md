@@ -14,7 +14,7 @@ Synchronous acquisition and analysis for sEMG-MMG. NI9205 and TCP/IP were used t
 You can download the UI_Collector.exe tool in **Release** for the task of sEMG-MMG acquisition, as shown in the following figure:
 
 <div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="width: 45%; object-fit: contain; margin-right:5%">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="width: 45%; object-fit: contain;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="width: 45%; object-fit: contain;">
 </div>
 
