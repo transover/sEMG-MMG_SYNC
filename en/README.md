@@ -10,13 +10,17 @@
 </p>
 
 # 使用说明
-表面肌电信号的同步采集与分析。采用NI9205和TCP/IP采集Quspin和BioSemi生成的数据。
-获取sEMG-MMG任务，可以在Release中下载“UI_Collector.exe”工具，如下图所示：
+表面肌电信号和肌磁信号的同步采集与分析：sEMG-MMG任务，**NI9205** 和 **TCP/IP** 被用于采集由 **Quspin** 和 **BioSemi** 生成的数据。
+- 通过 National Instruments 的 **cDAQ** 单元，完成了 **QuSpin**（OPMs 设备）、**BioSemi**（sEMG/ECG 设备）、**CIYENIC**（肌肉力量设备）等设备的模拟数据采集。该接口实现了多个设备数据流的多线程同步执行，核心技术围绕 **NI-DAQmx**、**PsychToolBox/PsychoPy** 以及 **TCP/IP** 协议展开。**NI-DAQmx** 基于 ctypes 库，是一个复杂且高度面向对象的封装，用于开发 **C API** 实现。串行/并行协议通过串口或并口控制和记录刺激电平（需要 **LPT** 驱动，**InpOut32/64** 是一个开源的 Windows **DLL** 和驱动程序，用于直接访问硬件端口）。
+- **PsychoPy** 基于底层 **PsychToolBox** 控制，结合 OpenGL 的图形渲染优势与简洁的语法，提供刺激呈现与控制，支持异步高精度的计划性定时，广泛应用于认知神经科学和实验心理学研究中。**TCP/IP** 协议通过数据流截取无线实时获取传感器信息。
+- 当连接状态、显示状态、采集状态以及刺激指示灯均为开启时，点击开始录制数据，点击暂停结束录制，数据将会被自动保存为三个独立的文件。
 
-<p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" style="margin-right:20 px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%" style="margin-right:10 px;" />
-</p>
+对于sEMG-MMG信号获取任务，你可以在 <a href="https://github.com/transover/sEMG-MMG_SYNC/releases/UI_Collector">Release</a> 中下载**UI_Collector.exe** 工具，如下图所示:
+
+<div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 5%; overflow: hidden;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
+</div>
 
 ### 1. 使用NI9205采集板卡，并安装NI驱动：
 - NI-DAQmx_driver目录下的ni-daqmx_24.0_online.exe，选择默认安装配置即可
