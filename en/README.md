@@ -21,7 +21,7 @@
 
 对于sEMG-MMG信号获取任务，你可以在 <a href="https://github.com/transover/sEMG-MMG_SYNC/releases/UI_Collector">Release</a> 中下载**UI_Collector.exe** 工具，如下图所示:
 
-<div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 5%; overflow: hidden;">
+<div style="align: center; gap: 5%;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" alt="SignalAcquisition" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" alt="SiganlPlotWindow" style="height: 300px; width: auto; max-width: 45%; object-fit: scale-down;">
 </div>
