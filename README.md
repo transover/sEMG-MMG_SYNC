@@ -109,3 +109,6 @@ class Param:
 <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" align="center" style="height: auto; width: 80%; object-fit: scale-down;">
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### License
+- The texts, code, images, photos, and videos in this repository are licensed under ![BSL-1.0 license](https://github.com/transover/sEMG-MMG_SYNC/blob/main/LICENSE)
+- If this content is helpful to you, please click Star :star:  on the top right corner of the page to show your support. Thank you! 
