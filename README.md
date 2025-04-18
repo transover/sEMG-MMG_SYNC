@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.jpg" height=400px style="margin-right:20 px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg"  height=400px style="margin-right:10 px;" />
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" height=400px style="margin-right:50px;"/>
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg"  height=400px style="margin-right:10px;" />
 </p>
 
 <p align="center">
@@ -14,8 +14,8 @@ Synchronous acquisition and analysis for sEMG-MMG. NI9205 and TCP/IP were used t
 You can download the UI_Collector.exe tool in **Release** for the task of sEMG-MMG acquisition, as shown in the following figure:
 
 <p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" style="margin-right:20 px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%" style="margin-right:10 px;" />
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalAcquisition.gif" width="45%" style="margin-right:50px;"/>
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/ExampleData/SignalPlot.jpg" width="45%" style="margin-right:10px;" />
 </p>
 
 ### 1. Using the NI9205 Acquisition Board and Installing the NI Driver:
