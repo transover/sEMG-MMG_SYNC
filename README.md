@@ -113,6 +113,36 @@ class Param:
 <img src="https://github.com/user-attachments/assets/cb5fd44a-fc6f-4f79-b5d3-36074266ab10" alt="Example of signal acquisition process" align="center" style="height: auto; width: 80%; object-fit: scale-down;">
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### License
+# License
 - The texts, code, images, photos, and videos in this repository are licensed under [BSL-1.0 license](https://github.com/transover/sEMG-MMG_SYNC/blob/main/LICENSE)
-- If this content is helpful to you, please click Star :star:  on the top right corner of the page to show your support. Thank you! 
+
+# Optimization
+### **✨ New Function**  
+- New functions such as **Magnetomyography (MMG)**, **Electromyography (EMG)**, **Muscle Power Assessment (MPA)** have been added.
+- The main interface supports translation between Chinese and English, adds preloading of subject information, real-time data acquisition, display and saving, and uses process isolation and asynchronous execution in multiple tasks.
+- The **NI9205** hardware voltage bias has been added. The baseline voltage detected when no hardware is connected (which can be regarded as a constant amount for a short period of time) has been software-calibrated in the program (updated on '2024-5-16 23:08').
+- After clicking the button **[Record]**, enter the automatic save mode. The save location is in the './GUI_Output' directory of the same directory as exe. The data composition can be seen in './Help'.
+
+### **⚡ Improvement**  
+- **Performance Enhancement**: Developed in environments like `gcc` and `python310`, compiled into `C` project files, achieving a speed increase of over 30% for the modules.  
+- **Accuracy Improvement**: Leveraged low-level control through `PsychToolBox` to achieve sub-millisecond stimulus delay, with state markers ensuring data synchronization across different virtual channels.  
+- **Compilation Optimization**: Disabled slow operations such as `LTO` and debug symbols, streamlined dependencies for parallel packaging, significantly reducing library resource dependencies, dynamic library calls, and external dependency issues.  
+- **UI Enhancement**: Developed using the `ctypes` library, supporting the `nidaqmx` library (implementing complex, highly object-oriented wrappers around the `NI-DAQmx C API`).  
+
+### **🐛 Bug Fixes**  
+- Fixed thread crash issues caused by `Process finished with exit code -1073741819 (0xC0000005)` access violation errors.  
+- Resolved missing driver compatibility issues for `psychopy.parallel._inpout`.  
+- Fixed `UnboundLocalError`, `FileNotFoundError`, and crash issues caused by missing temporary compressed packages (embedded resources).  
+
+### **📦 Dependency Updates**  
+- Upgraded `psychopy` to version 2023.  
+- File resources are located under the `./GUI_Package` directory in the compressed package, where users can modify participant information files (csv) and bias files (pkl).  
+
+### **⬇️ Download Links**  
+- **Windows**: [nidaqmx API](https://nidaqmx-python.readthedocs.io/en/latest/index.html)  [ni-daqmx_24.0_online.exe](https://github.com/transover/sEMG-MMG_SYNC/releases/NI9205)
+- **Windows**: [ActiView806.exe](https://www.biosemi.com/download.htm)  
+
+### **🙏 Others**  
+- If this content is helpful to you, please click Star :star:  on the top right corner of the page to show your support. Thank you!
+- If you encounter any issues, please contact the author at `transover@buaa.edu.cn` for support. 
+
