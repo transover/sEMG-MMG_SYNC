@@ -1,7 +1,25 @@
-<p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" height=400px style="margin-right:10px;"/>
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg"  height=400px style="margin-right:10px;" />
-</p>
+.image-container {
+    display: flex;
+    justify-content: space-between; /* 根据需要调整间距 */
+}
+ 
+.image-wrapper {
+    flex: 1; /* 让每个图片容器都等分可用空间 */
+    max-width: 50%; /* 每个图片最大宽度不超过容器宽度的50% */
+}
+ 
+.image-wrapper img {
+    width: 100%; /* 图片宽度填满容器，但不超过容器宽度 */
+    height: auto; /* 保持图片原始纵横比 */
+}
+<div class="image-container">
+    <div class="image-wrapper">
+         <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" height=400px style="margin-right:10px;"/>
+    </div>
+    <div class="image-wrapper">
+        <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/NITaskArchitecture.svg"  height=400px style="margin-right:10px;" />
+    </div>
+</div>
 
 <p align="center">
   English
