@@ -154,10 +154,12 @@ class NI_Param:
 characteristics of **UI_Collector.exe**. Furthermore, from the measured sEMG-MMG signal images, the timing alignment of each trial of the 2 modalities can be seen.
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/7b31d3a2-f370-463f-8825-6b2dd570e096" alt="Remanence Orientation" style="height: 100px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/f3e9f52f-61f7-4bbc-85ec-c6a96c953537" alt="Remanence Intensity" style="height: 100px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/a023df27-e101-453b-a491-5cf90b1c9850" alt="Analog/Digital Signals" style="height: 100px; width: auto; object-fit: scale-down;">
-    <img src="https://github.com/user-attachments/assets/e4912d3b-4b32-4baa-9bec-e93c7993537b" alt="sEMG-MMG Signals" style="height: 100px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/7b31d3a2-f370-463f-8825-6b2dd570e096" alt="Remanence Orientation" style="height: 250px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/f3e9f52f-61f7-4bbc-85ec-c6a96c953537" alt="Remanence Intensity" style="height: 250px; width: auto; object-fit: scale-down;">
+</p>
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/a023df27-e101-453b-a491-5cf90b1c9850" alt="Analog/Digital Signals" style="height: 250px; width: auto; object-fit: scale-down;">
+    <img src="https://github.com/user-attachments/assets/e4912d3b-4b32-4baa-9bec-e93c7993537b" alt="sEMG-MMG Signals" style="height: 250px; width: auto; object-fit: scale-down;">
 </p>
   
 # Results
