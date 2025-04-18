@@ -28,6 +28,8 @@ You can download the **UI_Collector.exe** tool in <a href="https://github.com/tr
 
 ### 1. Using the NI9205 Acquisition Board and Installing the NI Driver:
 - In the `NI-DAQmx_driver` directory, run `ni-daqmx_24.0_online.exe` and select the default installation settings.
+- Open the device Manager and check whether the driver items under `NI Data Acquisition Devices` are displayed correctly, such as `cDAQ-9171`, `NI9205(DSUB)`
+- In subsequent use, if **UI_collecter.exe** fails to recognize NI9205, you need to match the fields of **NI_Param** in the following program. You must set the hardware name to **cDAQ1Mod1**!
 
 ### 2. Using the BioSemi Acquisition Device and Installing the TCP/IP Server:
 - Download `ACTIVIEW806` from the `BioSemi` directory and use it directly. If LabView files are missing, install `LabView RuntimeEngine 2016 (64bit)/setup.exe`.
@@ -90,6 +92,35 @@ class Param:
     time = np.linspace(0, SampleNum / SampleFrequency, num=SampleNum, endpoint=False)  # Time vector (includes 0 at the start), size: samples
     data = np.zeros((ChannelNum, SampleNum))        # Data array (includes initial zeros), size: channels × samples
 ```
+```
+class NI_Param:
+    """
+    NI Acquisition Parameters (Parameters)
+    """
+    DeviceTypeName = 'NI9205'                          # Hardware name of the acquisition card (for reference only, not used in the program)
+    DeviceName = 'cDAQ1Mod1'                           # Device name (can be found in NI-MAX, e.g., cDAQ1Mod1)
+    Status = 'on'                                      # Acquisition status ('on' means reading, 'off' means stopped)
+    SampleFrequency = 1000                             # Sampling rate (Hz), recommended value is 1000
+    SampleNum = 1                                      # Number of sample points, including the starting point
+    DropSampleNum = 1                                  # Number of sample points collected before recording starts
+    callback_samples = 0                               # Actual amount of data read per channel in the callback
+    BufferSize = 100                                   # Data buffer size per channel
+    CallbackSize = BufferSize                          # Threshold of data amount to trigger the callback
+    buffer_in_size_cfg = round(BufferSize * 1)         # Internal buffer size, for clock configuration
+    ChannelNum = 30                                    # Number of valid AI channels set for the NI device (NI9205 has 10 physical slots; OPMs use Bx, By, and Bz axes per slot, resulting in 30 AI channels)
+    Unit = 'V'                                         # Unit of the data
+    MaxVoltage, MinVoltage = 10.0, -10.0               # Maximum and minimum analog voltages (V)
+    time_start, time_end = None, None                  # Start and end times of the task (datetime, when "start" is clicked)
+    time_start_acquire, time_end_acquire = None, None  # Start and end times of data acquisition (datetime, when "record" is clicked)
+    Duration = None                                    # Total recording duration (s)
+    IsRecording = False                                # Whether real-time file writing is enabled
+    WindowLength = 10                                  # Length of the latest data window (s); defines maximum data size; if too large (>1500), may cause stream buffer overflow errors
+    start_time_list = []                               # List of timestamps for each task start
+    stop_time_list = []                                # List of timestamps for each task pause
+    FileDir = './GUI_Output/Data'                      # Directory for saving data
+    FileName = 'NewTempData.txt'                       # Filename for saving data
+    FilePath = os.path.join(FileDir, FileName)         # Full path for saving data
+```
 
 ### 4. Launch UI_Collector and Follow Help Instructions to Complete Data Acquisition
 > 1.  Launch the software. If the NI9205 is connected properly, the **[Connection Status]** indicator will light up; otherwise, an error message will pop up.
@@ -119,7 +150,8 @@ class Param:
 # Optimization
 ### **✨ New Function**  
 - New functions such as **Magnetomyography (MMG)**, **Electromyography (EMG)**, **Muscle Power Assessment (MPA)** have been added.
-- The main interface supports translation between Chinese and English, adds preloading of subject information, real-time data acquisition, display and saving, and uses process isolation and asynchronous execution in multiple tasks.
+- The main interface supports translation between Chinese and English by **[Settings]** in the menubar
+- Enable preloading of subject information, real-time data acquisition, display and saving, and uses process isolation and asynchronous execution in multiple tasks. There is no need to worry about conflicts in tasks such as audio stimulation, data collection, real-time data file writing and dynamic image display.
 - The **NI9205** hardware voltage bias has been added. The baseline voltage detected when no hardware is connected (which can be regarded as a constant amount for a short period of time) has been software-calibrated in the program (updated on '2024-5-16 23:08').
 - After clicking the button **[Record]**, enter the automatic save mode. The save location is in the './GUI_Output' directory of the same directory as exe. The data composition can be seen in './Help'.
 
@@ -130,6 +162,7 @@ class Param:
 - **UI Enhancement**: Developed using the `ctypes` library, supporting the `nidaqmx` library (implementing complex, highly object-oriented wrappers around the `NI-DAQmx C API`).  
 
 ### **🐛 Bug Fixes**  
+- It perfectly solved the 'stream' buffer overflow error that occurred in the task of nidaqmx, avoiding data loss in long-term tasks (this error was caused by the accumulation of data volume leading to heavy memory burden, resulting in a delay of assignment operation for about 30 minutes, and then callback delay).
 - Fixed thread crash issues caused by `Process finished with exit code -1073741819 (0xC0000005)` access violation errors.  
 - Resolved missing driver compatibility issues for `psychopy.parallel._inpout`.  
 - Fixed `UnboundLocalError`, `FileNotFoundError`, and crash issues caused by missing temporary compressed packages (embedded resources).  
