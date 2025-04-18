@@ -155,12 +155,12 @@ class NI_Param:
     <img src="https://github.com/user-attachments/assets/1cbebcad-cf59-4346-b42b-b863c7d1dcca" alt="Files" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
   
-* [ ] The **PDF** file records the brief information of the experiment (which needs to be exported manually), which offers the overall preview;
-* [ ] **NewTempData.txt** and **BioSemiData.txt** respectively represent the MMG and sEMG data recorded under the autonomous contraction of skeletal muscle;
-* [ ] **NIConfig.pkl** and **BioSemiConfig.pkl** respectively record the configuration information such as experiments, hardware, channels, and timing of MMG and sEMG;
-* [ ] **Psychopy.pkl** records the occurrence time of stimuli for event division;
-* [ ] **Info.txt** records the experimental description information, such as paradigm information and subject information；
-* [x] The post-processing results of the above original data are under the **Process** directory (which need to be analyzed and obtained in **UI_Reader.exe**).
+- [ ] The **PDF** file records the brief information of the experiment (which needs to be exported manually), which offers the overall preview;
+- [ ] **NewTempData.txt** and **BioSemiData.txt** respectively represent the MMG and sEMG data recorded under the autonomous contraction of skeletal muscle;
+- [ ] **NIConfig.pkl** and **BioSemiConfig.pkl** respectively record the configuration information such as experiments, hardware, channels, and timing of MMG and sEMG;
+- [ ] **Psychopy.pkl** records the occurrence time of stimuli for event division;
+- [ ] **Info.txt** records the experimental description information, such as paradigm information and subject information；
+- [x] The post-processing results of the above original data are under the **Process** directory (which need to be analyzed and obtained in **UI_Reader.exe**).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # License
