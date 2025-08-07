@@ -146,7 +146,7 @@ class NI_Param:
 > 16. Hover the mouse over any button to view its function information.
 
 <p align="center">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/mainwindow_en.png" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/mainwindow_en.png" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;"><br>
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/RawData_en.png" alt="Example of signal acquisition process" style="height: auto; width: 80%; object-fit: scale-down;">
 </p>
 
