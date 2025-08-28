@@ -10,7 +10,8 @@
 # Schematic Diagram
 <div style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;">
   <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/SchematicDiagram_SignalAcquisition.svg" alt="SchematicDiagram_SignalAcquisition" style="height: 350px; max-width: 45%; object-fit: contain;">
-  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Synchronous_Architecture.svg" alt="Synchronous_Architecture.svg" style="height: 350px; max-width: 45%; object-fit: contain;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Sensors.png" alt="Sensors" style="height: 350px; max-width: 45%; object-fit: contain;">
+  <img src="https://github.com/transover/sEMG-MMG_SYNC/blob/main/en/Synchronous_Architecture.svg" alt="Synchronous_Architecture.svg" style="height: 400px; max-width: 95%; object-fit: contain;">
 </div>
 
 # Instructions for Use
